@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <!-- 真正的路径是：static/bookRecommand/css/test.css  相当于前面加了
+     一个名字叫static的变量，然后这个变量的值是'static'-->
+    <link rel="stylesheet" href="{% static 'bookRecommand/css/test.css' %}">
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <h1 class="A">{{ title }}</h1>
+    <p>{{ content }}</p>
 </body>
 </html>
