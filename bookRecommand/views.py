@@ -27,8 +27,6 @@ def login(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             return HttpResponse('恭喜你，登录成功了')
-            print('Form是：', form)
-            print('Form参数是：', form.data['user'], form.data['password'])
         else:
             return render(request, 'bookRecommand/login.html')
     else:

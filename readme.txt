@@ -1,4 +1,9 @@
+
+2018/5/9更新
+
 python选修课期末作业  ----  图书推荐系统
+
+前端使用Vue.JS开发，后端使用python框架Django，调度任务的程序运行基于python高级调度框架APScheduler，使用Scrapy框架进行数据的爬取，彩蛋游戏使用unity2D进行开发
 
 待完成功能如下：
 	1.自动续借
