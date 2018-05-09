@@ -1,5 +1,6 @@
 from django.db import models
-
+from django import forms
+from Spider import loginSpider
 # Create your models here.
 
 class Book(models.Model):
@@ -17,6 +18,11 @@ class Book(models.Model):
         return 'name[{name}]'.format(name=self.bookName)
 
 
-
-
-
+class LoginForm(forms.Form):
+    user = forms.CharField(label='user',max_length=100)
+    password = forms.CharField(label='password',max_length=100)
+    def is_valid(self):
+        if loginSpider.login(self.data['user'],self.data['password']):
+            return True
+        else:
+            return False

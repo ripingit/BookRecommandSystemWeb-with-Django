@@ -1,8 +1,10 @@
 from django.shortcuts import render
-
 # Create your views here.
 
 from django.http import HttpResponse
+
+from bookRecommand.models import  LoginForm
+
 
 def index(request):
     data = {
@@ -16,3 +18,18 @@ def detail(request,**kwargs):
         'postnumber':kwargs['pk']
     }
     return render(request,'bookRecommand/detail.html',context=data)
+
+#======================================
+# 进行登录操作
+#======================================
+def login(request):
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            return HttpResponse('恭喜你，登录成功了')
+            print('Form是：', form)
+            print('Form参数是：', form.data['user'], form.data['password'])
+        else:
+            return render(request, 'bookRecommand/login.html')
+    else:
+        return render(request,'bookRecommand/login.html')
