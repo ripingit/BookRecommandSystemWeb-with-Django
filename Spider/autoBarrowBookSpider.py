@@ -4,7 +4,7 @@ from lxml.html import etree
 import requests
 from Spider import loginSpider
 from Spider.models import Book
-
+import re
 
 headers = {
     'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' ,
@@ -99,11 +99,11 @@ def getUrgentBorrowBooks(bookDetailList):
 
 
 # 传入一个列表和借阅页面的response，对该列表内的所有书籍进行续借,
-# 如果续借成功，返回，即(success，[])，
-# 如果续借失败，返回状态码和续借失败的书籍(failed,[bookList])
+# 返回续借成功和失败的书籍  [success],[fails]
 # 本质上借阅书籍就是一次HTTP的post操作，所以下面的操作需要得到
 # post的网址以及进行post时的headers和cookies和data
 def autoBorrow(response,bookDetailList):
+    #==================================
     # 初始化需要post的data
     borrowData  = {
         'func': 'bor-renew-all',
@@ -114,18 +114,57 @@ def autoBorrow(response,bookDetailList):
     for book in bookDetailList:
         borrowData[book.inputKey] = 'Y'
     print(borrowData)
+
+    #======================================
     # 获得要进行续借post操作的url
     selector = etree.HTML(response.text)
-    print(selector.xpath('//a[contains(text(),"部分续借")]/@href'))
+    s = ','.join(selector.xpath('//script//text()'))
+    m = re.search('function collectData.*?var strData =(.*?);',s,flags=re.S)
+    # 用于续借post的url
+    href = (m.group(1)[2:-1])
 
+    response = requests.post(url=href,data=borrowData,headers=headers)
+    response.encoding = 'utf-8'
+    print(response.text)
+
+    selector = etree.HTML(response.text)
+
+
+    fails = []
+    successes = []
+
+    failBorrowBooks = selector.xpath('//table[contains(./tr/th[last()]/text(),"未能续借的原因")]//tr')
+    for failBooks in failBorrowBooks[1:]:
+        bookDetail = failBooks.xpath('.//td//text()')
+        name = bookDetail[1]
+        repayDay = bookDetail[3]
+        branchLibrary = bookDetail[5]
+        book = Book.BorrowBook(name=name,repayYear=repayDay,branchLibray=branchLibrary)
+        fails.append(book)
+
+    successBorrowBooks = selector.xpath('//table[not(contains(./tr/th[last()]/text(),"未能续借的原因"))]//tr')
+    for sucessBooks in successBorrowBooks[3:]:
+        bookDetail = sucessBooks.xpath('.//td//text()')
+        name = bookDetail[1]
+        repayDay = bookDetail[3]
+        branchLibrary = bookDetail[5]
+        book = Book.BorrowBook(name=name, repayYear=repayDay, branchLibray=branchLibrary)
+        successes.append(book)
+    return successes,fails
 if __name__ == "__main__":
     response = loginSpider.login('16240011','19970904')[1]
-    print(response.text)
     r = getBorrowBooks(response)
     l = r['borrowBooks']
     response = r['booksResponse']
     print(getUrgentBorrowBooks(l))
     a = []
     a.append(l[0])
-    print(response.text)
-    autoBorrow(response,a)
+    a.append(l[6])
+
+    l = (autoBorrow(response,a))
+    print('续借成功的书籍')
+    for i in l[0]:
+        print(i)
+    print('续借失败的书籍')
+    for i in l[1]:
+        print(i)

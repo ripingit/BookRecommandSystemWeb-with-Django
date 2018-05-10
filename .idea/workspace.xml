@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7c77a31-e4d5-444c-8b37-943c36b8729f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Pyemail/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pyemail/emailManger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Scheduler/scheduler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spider/models/Book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scheduler/schedulerTest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spider/loginSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/loginSpider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookRecommand/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/test.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookRecommand/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bookRecommand/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bookRecommand/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pyemail/emailManger.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pyemail/emailManger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,23 +36,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoBarrowBookSpider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="autoBarrowBookSpider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider/autoBarrowBookSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+            <state relative-caret-position="230">
+              <caret line="161" column="18" lean-forward="true" selection-start-line="161" selection-start-column="18" selection-end-line="161" selection-end-column="18" />
               <folding>
                 <element signature="e#9#24#0" expanded="true" />
+                <element signature="e#852#1175#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emailManger.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="emailManger.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pyemail/emailManger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+            <state relative-caret-position="180">
+              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -72,8 +64,8 @@
       <file leaf-file-name="Book.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider/models/Book.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="36">
+              <caret line="1" column="67" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -120,6 +112,7 @@
       <find>现金事务</find>
       <find>data</find>
       <find>False</find>
+      <find>collectData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,14 +139,14 @@
         <option value="$PROJECT_DIR$/bookRecommand/models.py" />
         <option value="$PROJECT_DIR$/Spider/loginSpider.py" />
         <option value="$PROJECT_DIR$/Spider/models/Book.py" />
-        <option value="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" />
         <option value="$PROJECT_DIR$/Pyemail/test.py" />
+        <option value="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" />
+        <option value="$PROJECT_DIR$/Pyemail/emailManger.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="321" />
-    <option name="width" value="1279" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="800" />
     <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -176,6 +169,17 @@
               <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
               <item name="Pyemail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="Spider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="Spider" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -327,15 +331,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="321" y="0" width="1279" height="860" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.316763" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.31625" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3167785" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37713534" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -364,6 +368,7 @@
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#9#24#0" expanded="true" />
+            <element signature="e#852#1175#0" />
           </folding>
         </state>
       </provider>
@@ -687,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/models/Book.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Python/Lib/smtplib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -701,22 +699,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pyemail/emailManger.py">
+    <entry file="file://$PROJECT_DIR$/Spider/models/Book.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="1" column="67" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Spider/autoBarrowBookSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+        <state relative-caret-position="230">
+          <caret line="161" column="18" lean-forward="true" selection-start-line="161" selection-start-column="18" selection-end-line="161" selection-end-column="18" />
           <folding>
             <element signature="e#9#24#0" expanded="true" />
+            <element signature="e#852#1175#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pyemail/emailManger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
