@@ -20,9 +20,7 @@ headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
     'Accept-Encoding': 'gzip, deflate',
     'Accept-Language': 'zh-CN,zh;q=0.9',
-    # 'Cache-Control': 'max-age=0',
     'Connection': 'keep-alive',
-    # 'Content-Length': '84',
     'Content-Type': 'application/x-www-form-urlencoded',
     'Cookie': 'UM_distinctid=1633a80bb95339-096e7ba2edcff7-444a022e-144000-1633a80bb9644f; yunsuo_session_verify=91fe09a4c281230cc7ac35a0823ffe12',
     'Host': 'opac.szpt.edu.cn:8991',
@@ -61,9 +59,9 @@ def login(user,password):
     data['bor_id'] =  '{user}'
     data['bor_verification'] = '{password}'
     if judge != []:
-        return True
+        return True,response
     else:
-        return False
+        return False,None
 
 if __name__ == "__main__":
     print(login('asdasd','asdad'))

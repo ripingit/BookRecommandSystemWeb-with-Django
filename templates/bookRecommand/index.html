@@ -7,7 +7,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1 class="A">{{ title }}</h1>
-    <p>{{ content }}</p>
+    {% if isLogin %}
+    <div id="Login">
+        <p>欢迎您，用户{{ user }}</p>
+        <a href="">开启自动续借功能</a>
+    </div>
+    {% endif %}
 </body>
 </html>

@@ -18,11 +18,14 @@ class Book(models.Model):
         return 'name[{name}]'.format(name=self.bookName)
 
 
+#====================================
+# 登录表单
+#====================================
 class LoginForm(forms.Form):
     user = forms.CharField(label='user',max_length=100)
     password = forms.CharField(label='password',max_length=100)
     def is_valid(self):
-        if loginSpider.login(self.data['user'],self.data['password']):
+        if loginSpider.login(self.data['user'],self.data['password'])[0]:
             return True
         else:
             return False
