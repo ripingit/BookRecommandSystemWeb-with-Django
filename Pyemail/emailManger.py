@@ -2,8 +2,8 @@ import smtplib
 from email.mime.text import MIMEText
 
 mail_host = 'smtp.exmail.qq.com'
-mail_user = 'xxxxxx@mail.szpt.edu.cn'
-mail_pass = 'xxxxxxxxxxxxxxxxxx'
+mail_user = '16240011@mail.szpt.edu.cn'
+mail_pass = 'Sz09043330'
 sender = '16240011@mail.szpt.edu.cn'
 
 # 用于发送HTML邮件

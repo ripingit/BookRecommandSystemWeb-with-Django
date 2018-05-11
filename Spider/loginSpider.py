@@ -7,7 +7,7 @@ def getSecretKey():
     keyUrl = 'http://opac.szpt.edu.cn:8991/F'
     response = requests.get(url=keyUrl)
     response.encoding = 'utf-8'
-    print(response.text)
+    
     selector = etree.HTML(response.text)
     secretKey = selector.xpath('//a[contains(text(),"登录")]/@href')[0]
 

@@ -5,6 +5,8 @@ import requests
 from Spider import loginSpider
 from Spider.models import Book
 import re
+from Scheduler import scheduler
+from Pyemail import emailManger
 
 headers = {
     'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' ,
@@ -47,7 +49,6 @@ def getBorrowBooks(response):
     hrefStartIndex = href.find('\'')
     hrefEndIndex = href.rfind('\'')
     href = href[hrefStartIndex+1:hrefEndIndex]
-    print(href)
 
     booksResponse = requests.get(url=href,headers=headers)
     booksResponse.encoding = 'utf-8'
@@ -55,7 +56,6 @@ def getBorrowBooks(response):
 
     books = booksSelector.xpath('//tr')
     borrowBooks = []
-    booksKey = ['No','著者','题名','出版年','应还日期','分馆','索书号']
     for book in books:
         try:
             inputKey = book.xpath('.//input[@type="checkbox"]/@name')
@@ -89,27 +89,19 @@ def getUrgentBorrowBooks(bookDetailList):
             result.append(book)
     return result
 
-# 对紧急书籍进行续借，
-# 同时发送邮箱通知用户，
-# 如果续借失败，
-# 发送失败信息给用户
-
-
-
-
-
 # 传入一个列表和借阅页面的response，对该列表内的所有书籍进行续借,
 # 返回续借成功和失败的书籍  [success],[fails]
 # 本质上借阅书籍就是一次HTTP的post操作，所以下面的操作需要得到
 # post的网址以及进行post时的headers和cookies和data
 def autoBorrow(response,bookDetailList):
+    if len(bookDetailList) == 0:
+        return [],[]
     #==================================
     # 初始化需要post的data
     borrowData  = {
         'func': 'bor-renew-all',
         'renew_selected': 'Y',
         'adm_library': 'SZY50',
-        # 'c001304693000010': 'Y',
     }
     for book in bookDetailList:
         borrowData[book.inputKey] = 'Y'
@@ -125,7 +117,6 @@ def autoBorrow(response,bookDetailList):
 
     response = requests.post(url=href,data=borrowData,headers=headers)
     response.encoding = 'utf-8'
-    print(response.text)
 
     selector = etree.HTML(response.text)
 
@@ -151,20 +142,65 @@ def autoBorrow(response,bookDetailList):
         book = Book.BorrowBook(name=name, repayYear=repayDay, branchLibray=branchLibrary)
         successes.append(book)
     return successes,fails
-if __name__ == "__main__":
-    response = loginSpider.login('16240011','19970904')[1]
-    r = getBorrowBooks(response)
-    l = r['borrowBooks']
-    response = r['booksResponse']
-    print(getUrgentBorrowBooks(l))
-    a = []
-    a.append(l[0])
-    a.append(l[6])
 
-    l = (autoBorrow(response,a))
-    print('续借成功的书籍')
-    for i in l[0]:
-        print(i)
-    print('续借失败的书籍')
-    for i in l[1]:
-        print(i)
+
+# 对紧急书籍进行续借，
+# 同时发送邮箱通知用户，
+# 如果续借失败，
+# 发送失败信息给用户
+# 下面是简化版的续借函数，该函数可通过apscheduler进行调度，
+# 每经过一天运行一次，每次对紧急书籍进行检查（即还书日期小于7天的书籍），
+# 对紧急书籍进行自动续借，同时将续借成功和续借失败的书籍发到邮箱内对用户进行提醒
+def wholeAutoBorrow(user,password):
+    # 首先进行登录操作,获得登录后的界面
+    response = loginSpider.login(user, password)[1]
+
+    # 获得用户所借阅的所有书籍
+    result = getBorrowBooks(response)
+    books = result['borrowBooks']
+    borrowResponse = result['booksResponse']
+
+    # 获得紧急书籍
+    urgentBooks = getUrgentBorrowBooks(books)
+
+    # 对紧急书籍进行借阅，得到续借成功和失败的书籍
+    borrowResult = autoBorrow(borrowResponse,urgentBooks)
+
+    sucess = borrowResult[0]
+    fails = borrowResult[1]
+
+    # 发送邮件通知用户
+    if len(urgentBooks) >= 0:
+        content = '''
+            <p>续借成功的书籍有:</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <p>续借失败的书籍有:</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        '''
+        emailManger.sendEmail(content=content,title='图书借阅系统')
+
+if __name__ == "__main__":
+    # response = loginSpider.login('16240011','19970904')[1]
+    # r = getBorrowBooks(response)
+    # l = r['borrowBooks']
+    # response = r['booksResponse']
+    # print(getUrgentBorrowBooks(l))
+    # a = []
+    # a.append(l[0])
+    #
+    # l = (autoBorrow(response,a))
+    # print('续借成功的书籍')
+    # for i in l[0]:
+    #     print(i)
+    # print('续借失败的书籍')
+    # for i in l[1]:
+    #     print(i)
+    wholeAutoBorrow('16240011','19970904')
