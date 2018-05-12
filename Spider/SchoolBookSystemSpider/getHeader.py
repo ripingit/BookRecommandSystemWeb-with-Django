@@ -11,5 +11,5 @@ def getCookie():
     for key,value in m:
         print('\''+key.strip()+'\'',':','\''+value.strip()+'\'',',')
 if __name__ == "__main__":
-    # getHeaders()
-    getCookie()
+    getHeaders()
+    # getCookie()

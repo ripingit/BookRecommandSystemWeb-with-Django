@@ -3,6 +3,10 @@ from lxml.html import etree
 from pymongo import *
 import time
 
+#=====================================
+# 豆瓣Selenium爬虫（方案已废弃）
+#======================================
+
 class DouBanSpiderWithSelenium(object):
     def __init__(self):
         self.client = MongoClient('mongodb://39.108.176.18/', 27017)
