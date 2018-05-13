@@ -13,7 +13,7 @@ class Book(models.Model):
     index = models.CharField(max_length=20)
     publisher = models.CharField(max_length=40)
     catalog = models.TextField()
-
+    systemNumber = models.CharField(max_length=20)
     def __str__(self):
         return 'name[{name}]'.format(name=self.bookName)
 

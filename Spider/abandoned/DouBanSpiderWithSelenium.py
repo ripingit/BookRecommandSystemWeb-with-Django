@@ -12,7 +12,7 @@ class DouBanSpiderWithSelenium(object):
         self.client = MongoClient('mongodb://39.108.176.18/', 27017)
         self.db = self.client.pythonLessonExamData
         self.collection = self.db.BookData
-        self.driver = webdriver.Chrome(executable_path='D:\\phantomjs\\chromedriver.exe')
+        self.driver = webdriver.PhantomJS(executable_path='/home/phantomjs-2.1.1-linux-x86_64/bin/phantomjs')
         self.file = open('douBanSpider.log','w+',encoding='utf-8')
         self.cookie = {
             'bid': 'A5msJzzDJtw',
@@ -96,13 +96,12 @@ class DouBanSpiderWithSelenium(object):
                 ISBN = bookData['ISBN']
                 self.file.write('data:'+str(ISBN)+'\n')
                 self.file.flush()
+                time.sleep(20)
                 try:
                     response = self.getBook(ISBN)
                     self.parseBook(response,ISBN)
                 except:
                     pass
-                time.sleep(40)
-
 
 if __name__ == "__main__":
     a = DouBanSpiderWithSelenium()

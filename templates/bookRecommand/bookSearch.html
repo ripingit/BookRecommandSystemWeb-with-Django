@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Right Sidebar | Initio - Free, multipurpose html5 template by GetTemplate</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">	
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="myassert/bookSystem.css" />
+	
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+<!-- Logo与登录界面 -->
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="1">
+		<h1 id="logo" class="text-center">Szpt BookSystem</h1>
+		<div class="searchBar">
+			<form action="" method="post">
+				<select name="find_code" id="find_code"> 
+				     <option value="WRD" selected="">所有字段</option> 
+				     <option value="WTI">题名关键词</option> 
+				     <option value="TIT">题名(精确匹配）</option> 
+				     <option value="WAU">著者</option> 
+				     <option value="WPU">出版社</option> 
+				     <option value="ISB">ISBN</option> 
+				     <option value="CAL">索书号</option> 
+				     <option value="SYS">系统号</option> 
+			    </select>
+				<input id="searchInput" type="text" name="searchKey" />
+				<input type="submit" value="检索" />
+			</form>
+				<div id="operate"> 
+					<span id="label">排序：</span>
+					<select name="sort" onchange="if(this.value)window.location=this.value" id="sort"> 
+						<option value="">年/评分/评论人数(降序)</option> 
+						<option value="">评分/年/评论人数(降序)</option> 
+						<option value="">评论人数/年/评分(降序)</option> 
+					</select> 
+				</div>
+		</div>
+		<div class="topy">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td><label for="ls_username">帐号</label></td>
+						<td><input type="text" name="username" id="ls_username" class="px vm xg1" value="学号/Email" onfocus="if(this.value == '学号/Email'){this.value = '';this.className = 'px vm';}" onblur="if(this.value == ''){this.value = '学号/Email';}" tabindex="901"></td>
+						<td class="fastlg_l"><label for="ls_cookietime"><input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903">自动登录</label></td>
+					</tr>
+					<tr>
+						<td><label for="ls_password">密码</label></td>
+						<td><input type="password" name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902"></td>
+						<td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>登录</em></button></td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="hidden" name="quickforward" value="yes">
+			<input type="hidden" name="handlekey" value="ls">
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-collapse collapse">
+				
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="blog.html">新书速递</a></li>
+					<li class="active"><a href="about.html">About</a></li>
+				</ul>
+			
+			</div>		
+		</div>	
+	</nav>
+</header>
+
+
+<!-- 主显示区域  -->
+<main id="main">
+	<div class="container">
+
+		<div class="row topspace">
+									
+				<div class="dividePage">
+					<legend>
+						<center class="">
+							<ul class="pagination">
+								<li class="disabled"><a href="">«</a></li>
+								<li class="active"><a href="">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+								<li><a href="">6</a></li>
+								<li><a href="">7</a></li>
+								<li><a href="">8</a></li>
+								<li><a href="">9</a></li>
+								<li><a href="">10</a></li>
+								<li><a href="">»</a></li>
+							</ul>
+						</center>
+					</legend>
+				</div>
+			
+			<!-- 搜索结果 -->
+			<div class="searchResult">
+				<!-- 搜索结果的每一本书 -->
+				<article class="book">
+					<div class="bookDetail">
+						<div class="bookDetailTitle">
+							<div class="bookImg">
+								<img height="150px" src="assets/images/avatar_man.png" />
+							</div>
+							<legend ><a href="">游戏人工智能</a></legend>
+							
+							<span>评分：x.x</span>
+							<span>评分人数:xxxx</span>
+						</div>
+						<br/>
+						<table>
+							<tr>
+								<td class="bookDetailLabel">作者：</td>
+								<td class="bookDetailContent">sjm</td>
+								<td class="bookDetailLabel">索书号：</td>
+								<td class="bookDetailContent">xxxxxx</td>
+							</tr>
+							<tr>
+								<td class="bookDetailLabel">出版社：</td>
+								<td class="bookDetailContent">xxx</td>
+								<td class="bookDetailLabel">年份：</td>
+								<td class="bookDetailContent">2018</td>
+							</tr>
+							<tr>
+								<td class="bookDetailLabel">馆藏复本:</td>
+								<td class="bookISBN bookDetailContent">加载中....</td>
+							</tr>
+						</table>
+					</div>
+				</article>
+
+			</div>
+
+
+			<!-- 右侧边栏 -->
+			<aside class="col-md-4 sidebar sidebar-left right">
+				
+				<!-- 缩小查询范围 -->
+				<div class="widget queryAssistance">
+					<fieldset class="C">
+					    <legend class="B">缩小查询范围</legend>
+						<!-- 本次查询出现次数最多的十个年份 ,按大到小的顺序排列 ,可伸缩-->
+						<span>年份:</span>
+						<ul>
+							<li><a href="">2018</a></li>
+							<li><a href="">2017</a></li>
+							<li><a href="">2016</a></li>
+							<li><a href="">2015</a></li>
+						</ul>
+						<span>分类:</span>
+						<ul>
+							<li><a href="">程序设计Tp312</a></li>
+							<li><a href="">算法语言Tp312.1</a></li>
+						</ul>
+					</fieldset>
+				</div>
+				
+				<!-- 常用标签栏 -->
+				<div class="widget commonLabels">
+					<fieldset class="C">
+					    <legend class="B">常用标签栏</legend>
+					    <span style="font-size: 28px;"><a href="">Unity</a></span>
+					    <span style="font-size: 20px;"><a href="">Python</a></span>
+					    <span style="font-size: 32px;"><a href="">Java</a></span>
+					    <span style="font-size: 18px;"><a href="">算法</a></span>
+					    <span style="font-size: 28px;"><a href="">Unity</a></span>
+					    <span style="font-size: 20px;"><a href="">Python</a></span>
+					    <span style="font-size: 32px;"><a href="">Java</a></span>
+					    <span style="font-size: 18px;"><a href="">算法</a></span>
+					</fieldset>
+				</div>
+
+				
+				<!-- 本次查询中点击率最高的一本书 -->
+				<div class="widget bestSearch">
+					<fieldset class="C">
+					    <legend class="B">本次查询点击率最高的书籍：</legend>
+					    <div class="recommandImg">
+					    	<p>此处预留图片</p>
+				    	</div>
+					    <span>书名:<a href="">游戏人工智能</a></span>
+					    <br/>
+					    <span>作者:xxxx</span>
+					    <br/>
+					    <span>点击量:xxxx</span>
+					    <br/>
+					</fieldset>					
+				</div>
+			
+			</aside>			
+			
+		</div>
+		
+			<div class="dividePage">
+				<legend>
+					<center class="">
+						<ul class="pagination">
+							<li class="disabled"><a href="">«</a></li>
+							<li class="active"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li><a href="">6</a></li>
+							<li><a href="">7</a></li>
+							<li><a href="">8</a></li>
+							<li><a href="">9</a></li>
+							<li><a href="">10</a></li>
+							<li><a href="">»</a></li>
+						</ul>
+					</center>
+				</legend>
+			</div>
+
+	</div>
+	
+</main>
+
+<footer id="footer" class="topspace">
+	<div class="container">
+		<div class="row">
+			
+
+			
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Text widget</h3>
+				<div class="widget-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
+					
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Form widget</h3>
+				<div class="widget-body">
+					<p>+234 23 9873237<br>
+						<a href="mailto:#">some.email@somewhere.com</a><br>
+						<br>
+						234 Hidden Pond Road, Ashland City, TN 37015
+					</p>	
+				</div>
+			</div>
+
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="assets/js/template.js"></script>
+</body>
+</html>
