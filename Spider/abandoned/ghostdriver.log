@@ -1,5 +1,395 @@
-[INFO  - 2018-05-12T14:48:42.041Z] GhostDriver - Main - running on port 51812
-[INFO  - 2018-05-12T14:48:46.563Z] Session [92f14760-55f3-11e8-b9b8-95eadd258afe] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2018-05-12T14:48:46.563Z] Session [92f14760-55f3-11e8-b9b8-95eadd258afe] - page.customHeaders:  - {}
-[INFO  - 2018-05-12T14:48:46.563Z] Session [92f14760-55f3-11e8-b9b8-95eadd258afe] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2018-05-12T14:48:46.563Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 92f14760-55f3-11e8-b9b8-95eadd258afe
+[INFO  - 2018-05-15T06:45:38.344Z] GhostDriver - Main - running on port 59199
+[INFO  - 2018-05-15T06:45:42.802Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-05-15T06:45:42.802Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.customHeaders:  - {}
+[INFO  - 2018-05-15T06:45:42.802Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-05-15T06:45:42.802Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 9683e170-580b-11e8-8c6f-bfe22ad94d93
+[ERROR - 2018-05-15T06:46:08.818Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:08.819Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:15.834Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:15.834Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:31.795Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:31.796Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:35.318Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: Invariant Violation: Minified React error #109; visit http://facebook.github.io/react/docs/error-decoder.html?invariant=109&args[]=t for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:35.318Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:5)
+  _renderValidatedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  _updateRenderedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  _performComponentUpdate (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  updateComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  s (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  T (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  (anonymous function) (:0)
+  closeAll (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  batchedUpdates (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  u (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  enqueueSetState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  setState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:1)
+  success (https://img3.doubanio.com/f/ithildin/835eac8ee5e30cc83d51346757849c85acfb02db/js/export/subject_topics.js:1)
+  f (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  fireWith (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:51.907Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:46:51.907Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:50:12.181Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:50:12.181Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:50:13.339Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: Invariant Violation: Minified React error #109; visit http://facebook.github.io/react/docs/error-decoder.html?invariant=109&args[]=t for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:50:13.339Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:5)
+  _renderValidatedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  _updateRenderedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  _performComponentUpdate (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  updateComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  s (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  T (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  (anonymous function) (:0)
+  closeAll (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  batchedUpdates (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  u (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  enqueueSetState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  setState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:1)
+  success (https://img3.doubanio.com/f/ithildin/835eac8ee5e30cc83d51346757849c85acfb02db/js/export/subject_topics.js:1)
+  f (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  fireWith (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-05-15T06:50:38.340Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2018-05-15T06:51:50.502Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:51:50.503Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:52:06.569Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:52:06.569Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:52:07.715Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: Invariant Violation: Minified React error #109; visit http://facebook.github.io/react/docs/error-decoder.html?invariant=109&args[]=t for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:52:07.716Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:5)
+  _renderValidatedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  _updateRenderedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  _performComponentUpdate (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  updateComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  s (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  T (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  (anonymous function) (:0)
+  closeAll (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  batchedUpdates (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  u (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  enqueueSetState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  setState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:1)
+  success (https://img3.doubanio.com/f/ithildin/835eac8ee5e30cc83d51346757849c85acfb02db/js/export/subject_topics.js:1)
+  f (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  fireWith (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:55:04.682Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:55:04.682Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:55:14.873Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:55:14.873Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:55:26.041Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:55:26.042Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-05-15T06:55:38.341Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2018-05-15T06:55:39.917Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:55:39.917Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:56:13.079Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:56:13.079Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:10.590Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: [Error]: Error while trying to access the //erebor.douban.com/?unit=dale_book_home_left_middle&bid=F2hbcTBlNO8&crtr=3%3A%2F&ts=1526367387905&callback=erebor_843B395EC4364A14827DA40BECE27449&failback_count=2
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:10.590Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/adjs/cdc904d1376a43e44bbf399a0aff51973016cd77/ad.release.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:12.617Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:12.618Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:26.599Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:26.599Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:33.280Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:33.280Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:45.976Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T06:57:45.976Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:00:37.708Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:00:37.708Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-05-15T07:00:38.340Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[ERROR - 2018-05-15T07:01:26.095Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:01:26.095Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:01:33.428Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:01:33.428Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:01:49.580Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: Invariant Violation: Minified React error #109; visit http://facebook.github.io/react/docs/error-decoder.html?invariant=109&args[]=t for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:01:49.581Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:5)
+  _renderValidatedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  _updateRenderedComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  _performComponentUpdate (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  updateComponent (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:2)
+  performUpdateIfNecessary (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  s (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  T (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  (anonymous function) (:0)
+  closeAll (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  perform (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  batchedUpdates (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:3)
+  u (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  r (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  enqueueSetState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:4)
+  setState (https://img3.doubanio.com/f/book/61252f2f9b35f08b37f69d17dfe48310dd295347/js/book/lib/react/bundle.js:1)
+  success (https://img3.doubanio.com/f/ithildin/835eac8ee5e30cc83d51346757849c85acfb02db/js/export/subject_topics.js:1)
+  f (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  fireWith (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:1)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+  r (https://img3.doubanio.com/f/book/0495cb173e298c28593766009c7b0a953246c5b5/js/book/lib/jquery/jquery.js:3)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:03:03.340Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:03:03.340Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:03:16.388Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:03:16.388Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:03:32.649Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:03:32.649Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:05:02.567Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'Object.assign({},window.answerObj)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-05-15T07:05:02.568Z] Session [9683e170-580b-11e8-8c6f-bfe22ad94d93] - page.onError - stack:
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  t (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+  (anonymous function) (https://img3.doubanio.com/f/verify/ac140ef86262b845d2be7b859e352d8196f3f6d4/entry_creator/dist/author_subject/index.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-05-15T07:05:38.340Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2018-05-15T07:10:38.342Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2018-05-15T07:15:38.373Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW

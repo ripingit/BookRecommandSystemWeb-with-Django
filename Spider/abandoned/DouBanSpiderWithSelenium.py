@@ -9,10 +9,10 @@ import time
 
 class DouBanSpiderWithSelenium(object):
     def __init__(self):
-        self.client = MongoClient('mongodb://39.108.176.18/', 27017)
+        self.client = MongoClient('mongodb://127.0.0.1/', 27017)
         self.db = self.client.pythonLessonExamData
         self.collection = self.db.BookData
-        self.driver = webdriver.PhantomJS(executable_path='/home/phantomjs-2.1.1-linux-x86_64/bin/phantomjs')
+        self.driver = webdriver.PhantomJS(executable_path='D:\\phantomjs\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe')
         self.file = open('douBanSpider.log','w+',encoding='utf-8')
         self.cookie = {
             'bid': 'A5msJzzDJtw',
@@ -88,7 +88,7 @@ class DouBanSpiderWithSelenium(object):
                                    })
     def startRequests(self):
         count = self.db.BookData.find().count()
-        for skip in range(300, count + 1, 100):
+        for skip in range(5600, count + 1, 100):
             self.file.write('skip:'+str(skip)+'\n')
             self.file.flush()
             books = list(self.db.BookData.find().limit(100).skip(skip))
@@ -96,7 +96,6 @@ class DouBanSpiderWithSelenium(object):
                 ISBN = bookData['ISBN']
                 self.file.write('data:'+str(ISBN)+'\n')
                 self.file.flush()
-                time.sleep(20)
                 try:
                     response = self.getBook(ISBN)
                     self.parseBook(response,ISBN)
@@ -105,6 +104,4 @@ class DouBanSpiderWithSelenium(object):
 
 if __name__ == "__main__":
     a = DouBanSpiderWithSelenium()
-    # response = a.getBook('9787121306594')
-    # a.parseBook(response)
     a.startRequests()

@@ -15,41 +15,50 @@
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link rel="stylesheet" href="myassert/bookSystem.css" />
-	
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 </head>
 <body>
 
 <!-- Logo与登录界面 -->
 <header id="header">
 	<div id="head" class="parallax" parallax-speed="1">
+
+		<!--设置新书速递以及自动续借和续借全部书籍-->
+		<ul class="setup">
+			<li>新书速递</li>
+			<li>自动续借</li>
+			<li>续借全部书籍</li>
+		</ul>
+
 		<h1 id="logo" class="text-center">Szpt BookSystem</h1>
+		<!--搜索条-->
 		<div class="searchBar">
 			<form action="" method="post">
-				<select name="find_code" id="find_code"> 
-				     <option value="WRD" selected="">所有字段</option> 
-				     <option value="WTI">题名关键词</option> 
-				     <option value="TIT">题名(精确匹配）</option> 
-				     <option value="WAU">著者</option> 
-				     <option value="WPU">出版社</option> 
-				     <option value="ISB">ISBN</option> 
-				     <option value="CAL">索书号</option> 
-				     <option value="SYS">系统号</option> 
+				<select name="find_code" id="find_code">
+				     <option value="WRD" selected="">所有字段</option>
+				     <option value="WTI">题名关键词</option>
+				     <option value="TIT">题名(精确匹配）</option>
+				     <option value="WAU">著者</option>
+				     <option value="WPU">出版社</option>
+				     <option value="ISB">ISBN</option>
+				     <option value="CAL">索书号</option>
+				     <option value="SYS">系统号</option>
 			    </select>
 				<input id="searchInput" type="text" name="searchKey" />
 				<input type="submit" value="检索" />
 			</form>
-				<div id="operate"> 
+				<div id="operate">
 					<span id="label">排序：</span>
-					<select name="sort" onchange="if(this.value)window.location=this.value" id="sort"> 
-						<option value="">年/评分/评论人数(降序)</option> 
-						<option value="">评分/年/评论人数(降序)</option> 
-						<option value="">评论人数/年/评分(降序)</option> 
-					</select> 
+					<select name="sort" onchange="if(this.value)window.location=this.value" id="sort">
+						<option value="">年/评分/评论人数(降序)</option>
+						<option value="">评分/年/评论人数(降序)</option>
+						<option value="">评论人数/年/评分(降序)</option>
+					</select>
 				</div>
 		</div>
-		<div class="topy">
+
+		<!--登录界面,登录之前-->
+		<div class="topy login">
 			<table cellspacing="0" cellpadding="0">
 				<tbody>
 					<tr>
@@ -67,30 +76,64 @@
 			<input type="hidden" name="quickforward" value="yes">
 			<input type="hidden" name="handlekey" value="ls">
 		</div>
+
+		<!--
+        	登录之后
+        -->
+		<!--<div class="login topy">
+			<p>
+				<strong class="vwmy"><a href="http://rpg.blue/home.php?mod=space&amp;uid=110281" target="_blank" title="访问我的空间">sjm906739171</a></strong>
+				<span class="pipe">|</span><a href="javascript:;" id="myitem" class="showmenu" onmouseover="showMenu({'ctrlid':'myitem'});" initialized="true">我的</a>
+				<span class="pipe">|</span><a href="http://rpg.blue/home.php?mod=spacecp">设置</a>
+				<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=8aed034c">退出</a>
+			</p>
+		</div>-->
 	</div>
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-collapse collapse">
-				
+
 				<ul class="nav navbar-nav">
 					<li><a href="index.html">Home</a></li>
 					<li><a href="blog.html">新书速递</a></li>
 					<li class="active"><a href="about.html">About</a></li>
 				</ul>
-			
-			</div>		
-		</div>	
+
+			</div>
+		</div>
 	</nav>
 </header>
-
-
+  <script type="text/javascript" >
+  function getFiveStar(id,filled){
+    var canvas = document.getElementById(id);
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    //设置是个顶点的坐标，根据顶点制定路径
+    for (var i = 0; i < 5; i++) {
+        context.lineTo(Math.cos((18+i*72)/180*Math.PI)*8.5+8.5,
+                        -Math.sin((18+i*72)/180*Math.PI)*8.5+8.5);
+        context.lineTo(Math.cos((54+i*72)/180*Math.PI)*4+8.5,
+                        -Math.sin((54+i*72)/180*Math.PI)*4+8.5);
+    }
+    context.closePath();
+    //设置边框样式以及填充颜色
+    context.lineWidth="1";
+    context.fillStyle = "#F6F152";
+    context.strokeStyle = "#F5270B";
+    if(filled){
+    	context.fill();
+    }
+    context.stroke();
+  }
+  </script>
 <!-- 主显示区域  -->
 <main id="main">
 	<div class="container">
 
 		<div class="row topspace">
-									
+
+				<!--分页标签-->
 				<div class="dividePage">
 					<legend>
 						<center class="">
@@ -111,7 +154,7 @@
 						</center>
 					</legend>
 				</div>
-			
+
 			<!-- 搜索结果 -->
 			<div class="searchResult">
 				<!-- 搜索结果的每一本书 -->
@@ -121,8 +164,57 @@
 							<div class="bookImg">
 								<img height="150px" src="assets/images/avatar_man.png" />
 							</div>
+							<legend >
+								<script>
+									  $(document).ready(function(){
+									  	getFiveStar("canvas1",true);
+									  	getFiveStar("canvas2",true);
+									  	getFiveStar("canvas3",true);
+									  	getFiveStar("canvas4",true);
+									  	getFiveStar("canvas5",true);
+									  })
+								</script>
+								<a href="">游戏人工智能</a>
+								<canvas id="canvas1" height="17px" width="17px"></canvas>
+								<canvas id="canvas2" height="17px" width="17px"></canvas>
+								<canvas id="canvas3" height="17px" width="17px"></canvas>
+								<canvas id="canvas4" height="17px" width="17px"></canvas>
+								<canvas id="canvas5" height="17px" width="17px"></canvas>
+								<span class="ratingScore">评分：x.x</span>
+								<span class="ratingScore">评分人数:xxxx</span>
+							</legend>
+
+						</div>
+						<br/>
+						<table class="bookDetailTable">
+							<tr>
+								<td class="bookDetailLabel">作者：</td>
+								<td class="bookDetailContent">sjm</td>
+								<td class="bookDetailLabel">索书号：</td>
+								<td class="bookDetailContent">xxxxxx</td>
+							</tr>
+							<tr>
+								<td class="bookDetailLabel">出版社：</td>
+								<td class="bookDetailContent">xxx</td>
+								<td class="bookDetailLabel">年份：</td>
+								<td class="bookDetailContent">2018</td>
+							</tr>
+							<tr>
+								<td class="bookDetailLabel">馆藏复本:</td>
+								<td class="bookISBN bookDetailContent">加载中....</td>
+							</tr>
+						</table>
+					</div>
+				</article>
+				<hr style="border: 1px black solid;" />
+				<article class="book">
+					<div class="bookDetail">
+						<div class="bookDetailTitle">
+							<div class="bookImg">
+								<img height="150px" src="assets/images/avatar_man.png" />
+							</div>
 							<legend ><a href="">游戏人工智能</a></legend>
-							
+
 							<span>评分：x.x</span>
 							<span>评分人数:xxxx</span>
 						</div>
@@ -153,7 +245,7 @@
 
 			<!-- 右侧边栏 -->
 			<aside class="col-md-4 sidebar sidebar-left right">
-				
+
 				<!-- 缩小查询范围 -->
 				<div class="widget queryAssistance">
 					<fieldset class="C">
@@ -173,7 +265,7 @@
 						</ul>
 					</fieldset>
 				</div>
-				
+
 				<!-- 常用标签栏 -->
 				<div class="widget commonLabels">
 					<fieldset class="C">
@@ -189,7 +281,7 @@
 					</fieldset>
 				</div>
 
-				
+
 				<!-- 本次查询中点击率最高的一本书 -->
 				<div class="widget bestSearch">
 					<fieldset class="C">
@@ -203,13 +295,13 @@
 					    <br/>
 					    <span>点击量:xxxx</span>
 					    <br/>
-					</fieldset>					
+					</fieldset>
 				</div>
-			
-			</aside>			
-			
+
+			</aside>
+
 		</div>
-		
+
 			<div class="dividePage">
 				<legend>
 					<center class="">
@@ -232,21 +324,21 @@
 			</div>
 
 	</div>
-	
+
 </main>
 
 <footer id="footer" class="topspace">
 	<div class="container">
 		<div class="row">
-			
 
-			
+
+
 
 			<div class="col-md-3 widget">
 				<h3 class="widget-title">Text widget</h3>
 				<div class="widget-body">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
-					
+
 				</div>
 			</div>
 
@@ -257,7 +349,7 @@
 						<a href="mailto:#">some.email@somewhere.com</a><br>
 						<br>
 						234 Hidden Pond Road, Ashland City, TN 37015
-					</p>	
+					</p>
 				</div>
 			</div>
 
@@ -268,7 +360,5 @@
 
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="assets/js/template.js"></script>
 </body>
 </html>
