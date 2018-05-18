@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for result in page.object_list %}
+        <p>书名是:{{ result.object.bookName }}</p>
+    {% empty %}
+
+    {% endfor %}
+</body>
+</html>

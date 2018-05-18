@@ -20,7 +20,7 @@ count = db.BookData.find().count()
 #     有多个行
 # '''))
 mySqlClient.commit()
-for skip in range(0, count + 1, 100):
+for skip in range(14200, count + 1, 100):
     # print(skip)
     books = list(db.BookData.find().limit(100).skip(skip))
     for bookData in books:
@@ -97,6 +97,6 @@ for skip in range(0, count + 1, 100):
                 seriesTitle=bookData.get('seriesTitle','暂无'),
                 systemNumber=bookData.get('systemNumber','暂无')
             )
-        print(insertSql)
+        # print(insertSql)
         cursor.execute(insertSql)
         mySqlClient.commit()

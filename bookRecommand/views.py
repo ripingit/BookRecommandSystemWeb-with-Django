@@ -1,20 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,reverse
 
 from django.http import HttpResponse, HttpResponseRedirect
 
 from bookRecommand.models import  LoginForm
-
+import bookRecommand
+from DataBaseManagement.database import MyDataBase
+from modeles.Book import Book
 #=========================================
 # 首页
 #=========================================
 def index(request):
-    isLogin = request.session.get('isLogin', False)
-    user = request.session.get('user',None)
-    data = {
-        'isLogin' : isLogin,
-        'user' : user
-    }
-    return render(request,'bookRecommand/index.html',context=data)
+    return render(request,'bookRecommand/bookSearch.html')
 
 def detail(request,**kwargs):
     data = {
@@ -30,13 +26,34 @@ def login(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             request.session['isLogin'] = True
-            request.session['user'] = form.data['user']
-            return HttpResponseRedirect('/bookSystem')
-        else:
-            return render(request, 'bookRecommand/login.html')
-    else:
-        return render(request,'bookRecommand/login.html')
+            request.session['user'] = form.data['username']
+    return redirect(reverse(bookRecommand.views.index))
 
+# 退出登录操作
+def quitLogin(request):
+    request.session['isLogin'] = False
+    request.session['user'] = ''
+    return redirect(reverse(bookRecommand.views.index))
 #=======================================
-# 自动续借功能
-#=======================================
+# 搜索功能
+#======================================
+def search(request):
+    csrfmiddlewaretoken = request.GET.get('csrfmiddlewaretoken',None)
+    findCode = request.GET.get('find_code','WRD')
+    searchKey = request.GET.get('searchKey',None)
+    if not csrfmiddlewaretoken or not searchKey:
+        return redirect(reverse(bookRecommand.views.index))
+    database = MyDataBase()
+    books = []
+    result = database.collections.find({'bookName':{'$regex':searchKey}})
+    for data in result:
+        ISBN = data.get('ISBN','')
+
+        book = Book(ISBN=data.get('ISBN',''),)
+        books.append(data)
+    print(len(books))
+    context = {
+        'books':books
+    }
+    return render(request,'bookRecommand/bookSearch.html',context=context)
+

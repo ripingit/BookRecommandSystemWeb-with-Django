@@ -1,0 +1,6 @@
+{{ object.ISBN }}
+{{ object.bookName }}
+{{ object.author }}
+{{ object.content }}
+{{ object.bookIndex }}
+{{ object.catalog }}
