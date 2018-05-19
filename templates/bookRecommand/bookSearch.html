@@ -37,26 +37,27 @@
 			<form action="/bookSystem/searchwithpymongo" method="GET">
 				{% csrf_token %}
 				<select name="find_code" id="find_code">
-				     <option value="WRD" selected="">所有字段</option>
-				     <option value="WTI">题名关键词</option>
-				     <option value="TIT">题名(精确匹配）</option>
-				     <option value="WAU">著者</option>
-				     <option value="WPU">出版社</option>
-				     <option value="ISB">ISBN</option>
-				     <option value="CAL">索书号</option>
-				     <option value="SYS">系统号</option>
+				     <option value="AllKeyButNotCatalog" selected="">所有字段(除目录)</option>
+				     <option value="AllKey">所有字段</option>
+				     <option value="CatalogKey">目录</option>
+				     <option value="BookNameKey">题名关键词</option>
+				     <option value="BookAuthorKey">著者</option>
+				     <option value="BookPublisherKey">出版社</option>
+				     <option value="ISBNKey">ISBN</option>
+				     <option value="IndexKey">索书号</option>
+				     <option value="SystemNumberKey">系统号</option>
 			    </select>
 				<input id="searchInput" type="text" name="searchKey" />
 				<input type="submit" value="检索" />
-			</form>
 				<div id="operate">
 					<span id="label">排序：</span>
-					<select name="sort" onchange="if(this.value)window.location=this.value" id="sort">
-						<option value="">年/评分/评论人数(降序)</option>
-						<option value="">评分/年/评论人数(降序)</option>
-						<option value="">评论人数/年/评分(降序)</option>
+					<select name="sort" id="sort">
+						<option value="Year-Rating-Person" selected="">年/评分/评论人数(降序)</option>
+						<option value="Rating-Year-Person">评分/年/评论人数(降序)</option>
+						<option value="Person-Year-Rating">评论人数/年/评分(降序)</option>
 					</select>
 				</div>
+			</form>
 		</div>
 
 		<!--登录界面,登录之前-->
@@ -123,7 +124,7 @@
     context.closePath();
     //设置边框样式以及填充颜色
     context.lineWidth="1";
-    context.fillStyle = "#F6F152";
+    context.fillStyle = "#F5270B";
     context.strokeStyle = "#F5270B";
     if(filled){
     	context.fill();
@@ -172,21 +173,20 @@
 							<legend >
 								<script>
 									  $(document).ready(function(){
-									  	getFiveStar("canvas1",true);
-									  	getFiveStar("canvas2",true);
-									  	getFiveStar("canvas3",true);
-									  	getFiveStar("canvas4",true);
-									  	getFiveStar("canvas5",true);
+									  	{{ data.getRatingGraphic|safe }}.forEach(function(item,index,arr){
+									  		getFiveStar("canvas"+item[0],eval(item[1]));
+									  	});
 									  })
 								</script>
 								<a href="">{{ data.bookName }}</a>
-								<canvas id="canvas1" height="17px" width="17px"></canvas>
-								<canvas id="canvas2" height="17px" width="17px"></canvas>
-								<canvas id="canvas3" height="17px" width="17px"></canvas>
-								<canvas id="canvas4" height="17px" width="17px"></canvas>
-								<canvas id="canvas5" height="17px" width="17px"></canvas>
-								<span class="ratingScore">评分：{{ data.ratingAverage }}</span>
-								<span class="ratingScore">评分人数:{{ data.ratingNumberRaters }}</span>
+								<br/>
+								<canvas id="canvas{{data.getRatingGraphic.0.0}}" height="17px" width="17px"></canvas>
+								<canvas id="canvas{{data.getRatingGraphic.1.0}}" height="17px" width="17px"></canvas>
+								<canvas id="canvas{{data.getRatingGraphic.2.0}}" height="17px" width="17px"></canvas>
+								<canvas id="canvas{{data.getRatingGraphic.3.0}}" height="17px" width="17px"></canvas>
+								<canvas id="canvas{{data.getRatingGraphic.4.0}}" height="17px" width="17px"></canvas>
+								<span class="ratingScore">评分：{{ data.doubanRating }}</span>
+								<span class="ratingScore">评分人数:{{ data.doubanRatingPerson }}</span>
 							</legend>
 
 						</div>
@@ -211,7 +211,8 @@
 						</table>
 					</div>
 				</article>
-				<hr style="border: 1px black solid;" />
+				<br/>
+				<hr style="border: 1px gray solid;" />
 				{% empty %}
 					<p>暂无书籍</p>
 				{% endfor %}

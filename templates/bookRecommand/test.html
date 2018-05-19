@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        alert("hello world");
+        var a = {{ book.getRatingGraphic|safe }};
+        {{ book.getRatingGraphic|safe }}.forEach(function(item,index,arr){
+            alert(item);
+            var b = item[1];
+            alert(typeof eval(b));
+        });
+    </script>
+    <p id="{{ book.getRatingGraphic.0.0 }}">{{ book.getRatingGraphic }}</p>
+</body>
+</html>
