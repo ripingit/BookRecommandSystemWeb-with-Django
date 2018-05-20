@@ -44,7 +44,8 @@ def search(request):
     searchKey = request.GET.get('searchKey',None)
     sortKey = request.GET.get('sort','Year-Rating-Person')
     page = int(request.GET.get('page',0))
-
+    year = request.GET.get('year',None)     # 用于检索条件的年份显示
+    years = {}             # 用于侧边栏的年份显示
 
     if not csrfmiddlewaretoken or not searchKey:
         return redirect(reverse(bookRecommand.views.index))
@@ -103,6 +104,10 @@ def search(request):
             {'systemNumber': {'$regex': searchKey, '$options': 'i'}}
         ]}
 
+    # 如果使用年份作为缩小范围
+    if year != None:
+        findData['publishYear'] = int(year)
+
     # 判断排序方法
     if sortKey == 'Year-Rating-Person':
         print('按照年份-评分-评论人数降序排序')
@@ -159,6 +164,7 @@ def search(request):
                     systemNumber=data.get('systemNumber',''),
                     ratingGraphic=ratingGraphic)
         books.append(book)
+        years[book.publishYear] = years.get(book.publishYear,0)+1
 
     # 本次搜索一共有多少条记录
     totalCount = result.count()
@@ -170,6 +176,8 @@ def search(request):
     end = totalPage if page+5>totalPage else page+5
     pageRange = range(start,end)
 
+    database.client.close()
+
     context = {
         'findCode':findCode,
         'books':books,
@@ -179,9 +187,53 @@ def search(request):
         'totalCount':totalCount,
         'totalPage':totalPage,
         'range':pageRange,
+        'years':years.keys()
     }
     return render(request,'bookRecommand/bookSearch.html',context=context)
 
+#=======================================
+# 书籍详情页面的显示
+# 根据ISBN号找到书名
+#========================================
+def bookDetail(request,ISBN):
+    database = MyDataBase()
+
+    data = database.collections.find_one({'ISBN':ISBN})
+    #=================================================
+    # 下面是一本书的详细信息
+    #=================================================
+    ratingGraphic = []
+    count = 0
+    for i in range(0, 5):
+        if i < data.get('ratingAverage', -1) // 2:
+            ratingGraphic.append([count, 'true'])
+        else:
+            ratingGraphic.append([count, 'false'])
+        count += 1
+    # 缩短书名
+    bookName = data.get('bookName', '')
+    bookName = bookName.split()[0]
+    book = Book(ISBN=data.get('ISBN', ''),
+                bookName=bookName,
+                bookUrl=data.get('bookUrl', ''),
+                author=data.get('author', ''),
+                content=data.get('content', ''),
+                publishYear=data.get('publishYear', -1),
+                bookIndex=data.get('index', ''),
+                publisher=data.get('publisher', ''),
+                catalog=data.get('catalog', ''),
+                douBanId=data.get('douBanId', ''),
+                doubanRating=data.get('ratingAverage', -1),
+                doubanRatingPerson=data.get('ratingNumberRaters', -1),
+                doubanSummary=data.get('doubanSummary', ''),
+                seriesTitle=data.get('seriesTitle', ''),
+                systemNumber=data.get('systemNumber', ''),
+                ratingGraphic=ratingGraphic)
+    database.client.close()
+    context = {
+        'book':book
+    }
+    return render(request,'bookRecommand/bookDetail.html',context=context)
 
 import json
 #======================================

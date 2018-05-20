@@ -109,6 +109,7 @@
 		</div>
 	</nav>
 </header>
+
   <script type="text/javascript" >
   function getFiveStar(id,filled){
     var canvas = document.getElementById(id);
@@ -141,7 +142,7 @@
 				<!--分页标签-->
 				<div class="dividePage">
 					<legend>
-						本次搜索一共有{{totalCount}}条记录，当前页数为{{page}}
+						本次搜索一共有{{totalCount}}条记录，当前页数为{{page}},总页数为{{ totalPage }},搜索上限为2000条记录
 					</legend>
 					<legend>
 						<center class="">
@@ -249,10 +250,11 @@
 						<!-- 本次查询出现次数最多的十个年份 ,按大到小的顺序排列 ,可伸缩-->
 						<span>年份:</span>
 						<ul>
-							<li><a href="">2018</a></li>
-							<li><a href="">2017</a></li>
-							<li><a href="">2016</a></li>
-							<li><a href="">2015</a></li>
+							{% for year in years %}
+								<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&findCode={{findCode}}&year={{year}}">{{year}}</a></li>
+							{% empty %}
+								<li><a href="">暂无年份可缩小</a></li>
+							{% endfor %}
 						</ul>
 						<span>分类:</span>
 						<ul>
@@ -300,9 +302,6 @@
 
 				<!--分页标签-->
 				<div class="dividePage">
-					<legend>
-						本次搜索一共有{{totalCount}}条记录，当前页数为{{page}}
-					</legend>
 					<legend>
 						<center class="">
 							<ul class="pagination">

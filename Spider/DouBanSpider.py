@@ -1,39 +1,11 @@
 import requests
 from pymongo import *
 import time
-#=================================================================
-# 豆瓣分布式爬虫(方案废弃)
-#================================================================
-
-
-#==================================================================
-# MongoDb队列
-#==================================================================
-# class UrlQueue(object):
-#     def __init__(self,client):
-#         self.db = client.pythonLessonExamData
-#         self.collection = self.db.urlQueue
-#         self.waitDownload = 'WAITDOWNLOAD'
-#         self.finishedDownload = 'FINISHEDDOWNLOAD'
-#     def pop(self):
-#         result = self.collection.find_and_modify(
-#             query={
-#                 'status':self.waitDownload
-#             },
-#             update={
-#                 '$set':{
-#                     'status': self.finishedDownload
-#                 }
-#             }
-#         )
-#         try:
-#             return result['url']
-#         except:
-#             return None
 
 #=================================================================
-# 豆瓣分布式爬虫程序
+# 豆瓣爬虫
 #=================================================================
+from Spider.getProxies import proxiesspider
 class DouBanSpider(object):
     def __init__(self):
         self.url = 'https://api.douban.com/v2/book/isbn/:{ISBN}'
@@ -51,20 +23,19 @@ class DouBanSpider(object):
         self.client = MongoClient('mongodb://127.0.0.1/', 27017)
         self.db = self.client.pythonLessonExamData
         self.collection = self.db.BookData
+        self.proxies = None
         self.file = open('douBanSpider.log','w+',encoding='utf-8')
+        self.proxiesspider = proxiesspider
     def start_request(self):
         count = self.db.BookData.find().count()
-        for skip in range(10800,count+1,100):
+        for skip in range(10700,count+1,100):
             self.file.write('skip:'+str(skip)+'\n')
             self.file.flush()
             books = list(self.db.BookData.find().limit(100).skip(skip))
             for bookData in books:
                 ISBN = bookData['ISBN']
                 url = self.url.format(ISBN=ISBN)
-                # response = requests.get(url=url,headers=self.headers)
                 data = self.get(url=url)
-                # self.file.write('data:'+str(data)+'\n')
-                # self.file.flush()
 
                 author = data.get('author','暂无')
                 doubanId = data.get('id','暂无')
@@ -100,11 +71,27 @@ class DouBanSpider(object):
 
     def get(self,url):
         while True:
-            response = requests.get(url=url, headers=self.headers)
+            try:
+                if self.proxies:
+                    response = requests.get(url=url, headers=self.headers,proxies=self.proxies)
+                else:
+                    response = requests.get(url=url, headers=self.headers)
+            except:
+                response = requests.get(url=url, headers=self.headers)
+                print('将代理ip置为空')
+                self.proxies = None
             data = response.json()
             if data.get('msg','').find('rate_limit_exceeded2')!=-1:
                 print(data)
-                time.sleep(120)
+                if self.proxies:
+                    print('将代理ip置为空')
+                    self.proxies = None
+                    time.sleep(120)
+                else:
+                    print('获取新的代理ip')
+                    self.proxies = next(self.proxiesspider.getProxies())
+                    print('得到的新代理ip是:',self.proxies)
+                    continue
             else:
                 return data
 
