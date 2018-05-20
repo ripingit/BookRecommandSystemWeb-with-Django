@@ -235,6 +235,12 @@ def bookDetail(request,ISBN):
     }
     return render(request,'bookRecommand/bookDetail.html',context=context)
 
+#========================================
+# 真正的首页
+#========================================
+def trueIndex(request):
+    return render(request,'bookRecommand/index.html')
+
 import json
 #======================================
 # 用于测试

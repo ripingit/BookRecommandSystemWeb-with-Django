@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^quitLogin$',views.quitLogin,name='quitLogin'),   # 退出登录
     url(r'^searchwithpymongo$',views.search,name='search'), # 搜索功能
     url(r'^bookDetail/(?P<ISBN>\d+)/$',views.bookDetail,name='bookDetail'),
+    url(r'^trueIndex$',views.trueIndex,name='trueIndex'),    # 首页的显示
     url(r'^test$',views._test,name='test'),  # 用于测试的功能
 ]

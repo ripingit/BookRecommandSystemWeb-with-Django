@@ -232,7 +232,7 @@ a:hover {
 
 **********************************************************************/
 #head {
-  background: #f4f4f4 url(../images/bg_head.jpg) top center;
+  background: #f4f4f4 url(../images/bookImage.jpg) center;
   background-size: cover;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
@@ -495,9 +495,6 @@ img {
 .pagination > li.active > a:hover {
   color: #000000;
   background: none;
-}
-li.active{
-    font-weight:bold;
 }
 /*********************************************************************
 
