@@ -54,7 +54,7 @@ class DouBanSpider(object):
         self.file = open('douBanSpider.log','w+',encoding='utf-8')
     def start_request(self):
         count = self.db.BookData.find().count()
-        for skip in range(10800,count+1,100):
+        for skip in range(12500,count+1,100):
             self.file.write('skip:'+str(skip)+'\n')
             self.file.flush()
             books = list(self.db.BookData.find().limit(100).skip(skip))
