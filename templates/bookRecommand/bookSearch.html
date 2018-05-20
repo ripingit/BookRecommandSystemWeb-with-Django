@@ -47,7 +47,7 @@
 				     <option value="IndexKey">索书号</option>
 				     <option value="SystemNumberKey">系统号</option>
 			    </select>
-				<input id="searchInput" type="text" name="searchKey" />
+				<input id="searchInput" type="text" name="searchKey" value="{{ searchKey }}" />
 				<input type="submit" value="检索" />
 				<div id="operate">
 					<span id="label">排序：</span>
@@ -141,20 +141,40 @@
 				<!--分页标签-->
 				<div class="dividePage">
 					<legend>
+						本次搜索一共有{{totalCount}}条记录，当前页数为{{page}}
+					</legend>
+					<legend>
 						<center class="">
 							<ul class="pagination">
-								<li class="disabled"><a href="">«</a></li>
-								<li class="active"><a href="">1</a></li>
-								<li><a href="">2</a></li>
-								<li><a href="">3</a></li>
-								<li><a href="">4</a></li>
-								<li><a href="">5</a></li>
-								<li><a href="">6</a></li>
-								<li><a href="">7</a></li>
-								<li><a href="">8</a></li>
-								<li><a href="">9</a></li>
-								<li><a href="">10</a></li>
-								<li><a href="">»</a></li>
+								{% if page <= 0 %}
+									<li><a href="">«</a></li>
+								{% else %}
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:-1}}&searchKey={{searchKey}}&findCode={{findCode}}">«</a></li>
+								{% endif %}
+
+								{% if page|add:-5 > 0 %}
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&findCode={{findCode}}">0</a></li>
+									<li><a>.......</a></li>
+								{% endif %}
+
+								{% for p in range %}
+									{% if p == page %}
+										<li class="active"><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+									{% else %}
+										<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+									{% endif %}
+								{% endfor %}
+								{% if page|add:5 >= totalPage %}
+
+								{% else %}
+									<li><a>.......</a></li>
+								{% endif %}
+								<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{totalPage}}&searchKey={{searchKey}}&findCode={{findCode}}">{{totalPage}}</a></li>
+								{% if page >= totalPage %}
+									<li><a href="">»</a></li>
+								{% else %}
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:1}}&searchKey={{searchKey}}&findCode={{findCode}}">»</a></li>
+								{% endif %}
 							</ul>
 						</center>
 					</legend>
@@ -196,7 +216,7 @@
 								<td class="bookDetailLabel">作者：</td>
 								<td class="bookDetailContent">{{ data.author }}</td>
 								<td class="bookDetailLabel">索书号：</td>
-								<td class="bookDetailContent">{{ data.index }}</td>
+								<td class="bookDetailContent">{{ data.bookIndex }}</td>
 							</tr>
 							<tr>
 								<td class="bookDetailLabel">出版社：</td>
@@ -216,90 +236,6 @@
 				{% empty %}
 					<p>暂无书籍</p>
 				{% endfor %}
-
-				<!-- 搜索结果的每一本书 -->
-				<!--<article class="book">-->
-					<!--<div class="bookDetail">-->
-						<!--<div class="bookDetailTitle">-->
-							<!--<div class="bookImg">-->
-								<!--<img height="150px" src="{% static 'bookRecommand/images/avatar_man.png' %}" />-->
-							<!--</div>-->
-							<!--<legend >-->
-								<!--<script>-->
-									  <!--$(document).ready(function(){-->
-									  	<!--getFiveStar("canvas1",true);-->
-									  	<!--getFiveStar("canvas2",true);-->
-									  	<!--getFiveStar("canvas3",true);-->
-									  	<!--getFiveStar("canvas4",true);-->
-									  	<!--getFiveStar("canvas5",true);-->
-									  <!--})-->
-								<!--</script>-->
-								<!--<a href="">游戏人工智能</a>-->
-								<!--<canvas id="canvas1" height="17px" width="17px"></canvas>-->
-								<!--<canvas id="canvas2" height="17px" width="17px"></canvas>-->
-								<!--<canvas id="canvas3" height="17px" width="17px"></canvas>-->
-								<!--<canvas id="canvas4" height="17px" width="17px"></canvas>-->
-								<!--<canvas id="canvas5" height="17px" width="17px"></canvas>-->
-								<!--<span class="ratingScore">评分：x.x</span>-->
-								<!--<span class="ratingScore">评分人数:xxxx</span>-->
-							<!--</legend>-->
-
-						<!--</div>-->
-						<!--<br/>-->
-						<!--<table class="bookDetailTable">-->
-							<!--<tr>-->
-								<!--<td class="bookDetailLabel">作者：</td>-->
-								<!--<td class="bookDetailContent">sjm</td>-->
-								<!--<td class="bookDetailLabel">索书号：</td>-->
-								<!--<td class="bookDetailContent">xxxxxx</td>-->
-							<!--</tr>-->
-							<!--<tr>-->
-								<!--<td class="bookDetailLabel">出版社：</td>-->
-								<!--<td class="bookDetailContent">xxx</td>-->
-								<!--<td class="bookDetailLabel">年份：</td>-->
-								<!--<td class="bookDetailContent">2018</td>-->
-							<!--</tr>-->
-							<!--<tr>-->
-								<!--<td class="bookDetailLabel">馆藏复本:</td>-->
-								<!--<td class="bookISBN bookDetailContent">加载中....</td>-->
-							<!--</tr>-->
-						<!--</table>-->
-					<!--</div>-->
-				<!--</article>-->
-				<!--<hr style="border: 1px black solid;" />-->
-				<!--<article class="book">-->
-					<!--<div class="bookDetail">-->
-						<!--<div class="bookDetailTitle">-->
-							<!--<div class="bookImg">-->
-								<!--<img height="150px" src="{% static 'bookRecommand/images/avatar_man.png' %}" />-->
-							<!--</div>-->
-							<!--<legend ><a href="">游戏人工智能</a></legend>-->
-
-							<!--<span>评分：x.x</span>-->
-							<!--<span>评分人数:xxxx</span>-->
-						<!--</div>-->
-						<!--<br/>-->
-						<!--<table>-->
-							<!--<tr>-->
-								<!--<td class="bookDetailLabel">作者：</td>-->
-								<!--<td class="bookDetailContent">sjm</td>-->
-								<!--<td class="bookDetailLabel">索书号：</td>-->
-								<!--<td class="bookDetailContent">xxxxxx</td>-->
-							<!--</tr>-->
-							<!--<tr>-->
-								<!--<td class="bookDetailLabel">出版社：</td>-->
-								<!--<td class="bookDetailContent">xxx</td>-->
-								<!--<td class="bookDetailLabel">年份：</td>-->
-								<!--<td class="bookDetailContent">2018</td>-->
-							<!--</tr>-->
-							<!--<tr>-->
-								<!--<td class="bookDetailLabel">馆藏复本:</td>-->
-								<!--<td class="bookISBN bookDetailContent">加载中....</td>-->
-							<!--</tr>-->
-						<!--</table>-->
-					<!--</div>-->
-				<!--</article>-->
-
 			</div>
 
 
@@ -362,26 +298,47 @@
 
 		</div>
 
-			<div class="dividePage">
-				<legend>
-					<center class="">
-						<ul class="pagination">
-							<li class="disabled"><a href="">«</a></li>
-							<li class="active"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">4</a></li>
-							<li><a href="">5</a></li>
-							<li><a href="">6</a></li>
-							<li><a href="">7</a></li>
-							<li><a href="">8</a></li>
-							<li><a href="">9</a></li>
-							<li><a href="">10</a></li>
-							<li><a href="">»</a></li>
-						</ul>
-					</center>
-				</legend>
-			</div>
+				<!--分页标签-->
+				<div class="dividePage">
+					<legend>
+						本次搜索一共有{{totalCount}}条记录，当前页数为{{page}}
+					</legend>
+					<legend>
+						<center class="">
+							<ul class="pagination">
+								{% if page <= 0 %}
+									<li><a href="">«</a></li>
+								{% else %}
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:-1}}&searchKey={{searchKey}}&findCode={{findCode}}">«</a></li>
+								{% endif %}
+
+								{% if page|add:-5 > 0 %}
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&findCode={{findCode}}">0</a></li>
+									<li><a>.......</a></li>
+								{% endif %}
+
+								{% for p in range %}
+									{% if p == page %}
+										<li class="active"><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+									{% else %}
+										<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+									{% endif %}
+								{% endfor %}
+								{% if page|add:5 >= totalPage %}
+
+								{% else %}
+									<li><a>.......</a></li>
+								{% endif %}
+								<li><a href="">{{totalPage}}</a></li>
+								{% if page >= totalPage %}
+									<li><a href="">»</a></li>
+								{% else %}
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:1}}&searchKey={{searchKey}}&findCode={{findCode}}">»</a></li>
+								{% endif %}
+							</ul>
+						</center>
+					</legend>
+				</div>
 
 	</div>
 

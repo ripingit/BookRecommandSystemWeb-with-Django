@@ -43,9 +43,13 @@ def search(request):
     findCode = request.GET.get('find_code','AllKeyButNotCatalog')
     searchKey = request.GET.get('searchKey',None)
     sortKey = request.GET.get('sort','Year-Rating-Person')
-    page = request.GET.get('page',0)
+    page = int(request.GET.get('page',0))
+
+
     if not csrfmiddlewaretoken or not searchKey:
         return redirect(reverse(bookRecommand.views.index))
+
+
     database = MyDataBase()
     books = []
 
@@ -155,11 +159,26 @@ def search(request):
                     systemNumber=data.get('systemNumber',''),
                     ratingGraphic=ratingGraphic)
         books.append(book)
+
+    # 本次搜索一共有多少条记录
+    totalCount = result.count()
+    # 总页数
+    totalPage = totalCount//10
+
+    # 分页的范围
+    start = 0 if page-5<0 else page-5
+    end = totalPage if page+5>totalPage else page+5
+    pageRange = range(start,end)
+
     context = {
         'findCode':findCode,
         'books':books,
         'searchKey':searchKey,
         'page':page,
+        'csrf':csrfmiddlewaretoken,
+        'totalCount':totalCount,
+        'totalPage':totalPage,
+        'range':pageRange,
     }
     return render(request,'bookRecommand/bookSearch.html',context=context)
 

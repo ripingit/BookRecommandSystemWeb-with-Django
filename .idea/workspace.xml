@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7c77a31-e4d5-444c-8b37-943c36b8729f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Spider/abandoned/clearMongodb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bookRecommand/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookRecommand/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookRecommand/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modeles/Book.py" beforeDir="false" afterPath="$PROJECT_DIR$/modeles/Book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bookRecommand/bookSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bookRecommand/bookSearch.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,15 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DouBanSpider.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2520">
-              <caret line="72" column="41" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="clearMongodb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider/abandoned/clearMongodb.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -43,10 +31,11 @@
       <file leaf-file-name="bookSearch.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/bookRecommand/bookSearch.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="125" column="26" lean-forward="true" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+            <state relative-caret-position="392">
+              <caret line="253" column="56" lean-forward="true" selection-start-line="253" selection-start-column="56" selection-end-line="253" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -62,11 +51,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="494" column="35" lean-forward="true" selection-start-line="494" selection-start-column="35" selection-end-line="494" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/bookRecommand/test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -74,8 +72,8 @@
       <file leaf-file-name="Book.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeles/Book.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="299">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -83,13 +81,13 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bookRecommand/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="135" column="22" lean-forward="true" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
+            <state relative-caret-position="357">
+              <caret line="176" column="20" lean-forward="true" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="20" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-                <element signature="e#696#953#0" />
-                <element signature="e#1729#2280#0" />
-                <element signature="e#2320#2935#0" />
+                <element signature="e#1739#2290#0" />
+                <element signature="e#2330#2945#0" />
+                <element signature="e#3735#4267#0" />
               </folding>
             </state>
           </provider>
@@ -164,6 +162,7 @@
       <find>\'</find>
       <find>本书共12章，主要包括信息的表</find>
       <find>schema_fields[field_class.index_fi</find>
+      <find>active</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/bookRecommand/login.py" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/postTest.py" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/postTest.html" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/Truelogin.html" />
@@ -222,13 +220,14 @@
         <option value="$PROJECT_DIR$/modeles/Book.py" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/test.html" />
         <option value="$PROJECT_DIR$/bookRecommand/views.py" />
+        <option value="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/bookSearch.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="148" />
-    <option name="width" value="1452" />
+    <option name="x" value="-7" />
+    <option name="width" value="1607" />
     <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -251,6 +250,27 @@
               <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
               <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -431,9 +451,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="148" y="0" width="1452" height="860" extended-state="0" />
+    <frame x="-7" y="0" width="1607" height="860" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21935934" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19798869" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -454,21 +475,21 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.228125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22076215" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -479,7 +500,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <option name="time" value="28" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -614,13 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -789,13 +803,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/bookRecommand/test.py" />
-    <entry file="file://$PROJECT_DIR$/modeles/Book.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookRecommand/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -806,16 +813,38 @@
     <entry file="file://$PROJECT_DIR$/templates/bookRecommand/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bookRecommand/bookDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="163" column="62" selection-start-line="163" selection-start-column="62" selection-end-line="163" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="494" column="35" lean-forward="true" selection-start-line="494" selection-start-column="35" selection-end-line="494" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeles/Book.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/bookRecommand/bookSearch.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="125" column="26" lean-forward="true" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+        <state relative-caret-position="392">
+          <caret line="253" column="56" lean-forward="true" selection-start-line="253" selection-start-column="56" selection-end-line="253" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#button#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -830,22 +859,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bookRecommand/bookDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="163" column="62" selection-start-line="163" selection-start-column="62" selection-end-line="163" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookRecommand/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="135" column="22" lean-forward="true" selection-start-line="135" selection-start-column="22" selection-end-line="135" selection-end-column="22" />
+        <state relative-caret-position="357">
+          <caret line="176" column="20" lean-forward="true" selection-start-line="176" selection-start-column="20" selection-end-line="176" selection-end-column="20" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#696#953#0" />
-            <element signature="e#1729#2280#0" />
-            <element signature="e#2320#2935#0" />
+            <element signature="e#1739#2290#0" />
+            <element signature="e#2330#2945#0" />
+            <element signature="e#3735#4267#0" />
           </folding>
         </state>
       </provider>
