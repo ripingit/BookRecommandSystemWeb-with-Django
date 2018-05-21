@@ -42,6 +42,20 @@
 			}
 		})
 	}
+	$(document).ready(function(){
+		$('li#attention').click(function(){
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+			$('#setupEmail').hide();
+			$('#setupAttention').show();
+		});
+		$('li#basesetup').click(function(){
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+			$('#setupEmail').show();
+			$('#setupAttention').hide();
+		});
+	});
 </script>
 <style>
 	.margintop{
@@ -147,9 +161,9 @@
 			<aside class="col-sm-4 sidebar sidebar-right">
 
 				<ul class="nav text-right nav-side">
-					<li class="active"><a href="#ui">基本设置</a></li>
-					<li><a href="#ui">特别关注</a></li>
-					<li><a href="#frontend">馆藏空闲通知</a></li>
+					<li id="basesetup" class="active"><a >基本设置</a></li>
+					<li id="attention"><a>特别关注</a></li>
+					<li><a >馆藏空闲通知</a></li>
 				</ul>
 
 			</aside>
@@ -159,7 +173,7 @@
 			<!--此处是设置邮箱的地方-->
 			<!--此处是设置邮箱的地方-->
             {% getEmail request.session.userName as email %}
-            <article class="col-sm-8 maincontent">
+            <article class="col-sm-8 maincontent" id="setupEmail">
                 {% if email %}
                     <p style="color: red;">邮箱已设置，当前邮箱为:{{email}}</p>
                 {% else %}
@@ -184,23 +198,24 @@
 			</article>
 
 			<!-- 此处是设置特别关注的地方 -->
-			<!--<article class="col-sm-8 maincontent">
+			{% getTags request.session.userName as commonTags %}
+			<article class="col-sm-8 maincontent" id="setupAttention" style="display:none;">
 				<p>设置我的特别关注标签，添加标签，在每月一次的新书速递中，如果遇到字段中含有特别关注的标签，将会给您定时推送。</p>
 				<br/>
 				<legend><span class="bookLabel">设置我的特别关注  · · · · · ·</span></legend>
 				<div class="specialAttention">
-                    <span class="specialLabel">Shader(目录)</span>，
-                    <span class="specialLabel">Unity(书名)</span>，
-                    <span class="specialLabel">行为树(目录)</span>，
-                    <span class="specialLabel">有限状态机(目录)</span>，
+					{% if commonTags %}
+						{% for tag in commonTags %}
+							<span class="specialLabel">{{tag}}</span>，
+						{% endfor %}
+					{% endif %}
 				</div>
 				<div class="addSpecialAttention">
-					<form action="" method="POST">
+					<form action="/bookSystem/addSpecialAttention" method="POST">
+						{% csrf_token %}
 						关键字:<input type="text" name="key" />
 						包含关键字的字段:
-						<select name="find_code" id="find_code">
-					     	 <option value="AllKeyButNotCatalog" selected="">所有字段(除目录)</option>
-						     <option value="AllKey" selected="">所有字段</option>
+						<select name="KeyCode" id="find_code2">
 						     <option value="CatalogKey">目录</option>
 						     <option value="BookNameKey">题名关键词</option>
 						     <option value="BookAuthorKey">著者</option>
@@ -209,7 +224,7 @@
 					    <input type="submit" value="添加特别关注标签" />
 					</form>
 				</div>
-			</article>-->
+			</article>
 			<!-- /Article -->
 
 

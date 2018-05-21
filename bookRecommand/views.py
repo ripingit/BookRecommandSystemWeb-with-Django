@@ -57,7 +57,11 @@ def preLogin(request):
             if mydatabase.isFirstLogin(userName):
                 userData = {
                     'userName':userName,
-                    'password':password
+                    'password':password,
+                    'CatalogKey':[],
+                    'BookNameKey':[],
+                    'BookAuthorKey':[],
+                    'BookPublisherKey':[]
                 }
                 mydatabase.userData.insert(userData)
                 # 是第一次登录,跳转至邮箱设置界面,并将用户数据插入数据库
@@ -201,9 +205,11 @@ def search(request):
                 ratingGraphic.append([count,'false'])
             count += 1
         # 缩短书名
-        bookName = data.get('bookName', '')
-        bookName = bookName.split()[0]
-
+        try:
+            bookName = data.get('bookName', '')
+            bookName = re.split('/|=',bookName)[0]
+        except:
+            bookName = bookName.split()[0]
         book = Book(ISBN=data.get('ISBN',''),
                     bookName=bookName,
                     bookUrl=data.get('bookUrl',''),
@@ -377,4 +383,24 @@ def sendMessage(request):
         mydatabase = MyDataBase()
         mydatabase.userData.update({'userName':userName},{'$set':{'email':email}})
         mydatabase.client.close()
+    return render(request,'bookRecommand/setup.html')
+
+#=============================================================
+# 增加特别关注标签的视图函数
+#============================================================
+def addSpecialAttention(request):
+
+    if request.method == "POST":
+        data = request.POST
+
+        userName = request.session.get('userName',None)
+
+        KeyCode = data.get('KeyCode','BookNameKey')
+        key = data.get('key',None)
+
+        if userName and key:
+            mydatabase = MyDataBase()
+            mydatabase.userData.update({'userName':userName},{'$push':{KeyCode:key}})
+            print('添加成功!',key)
+            mydatabase.client.close()
     return render(request,'bookRecommand/setup.html')

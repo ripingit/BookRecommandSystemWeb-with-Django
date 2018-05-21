@@ -17,9 +17,10 @@ class MyDataBase(object):
         #       简单说明一下特别关注的字段，特别关注字段里面是一个字典，
         #       字典一共有n个键，分别是目录，内容简介，书名，等等，
         #       每个字段里面包含一个列表，列表里面是用户设置的特别关注的标签。
-        #       'specialAttention':{
-        #           'catalog':['Unity','Shader',.......]
-        #       },
+        #       'CatalogKey':['Unity','Shader',.......],
+        #       'BookNameKey':[''],
+        #       'BookAuthorKey':[''],
+        #       'BookPublisherKey':['']
         #       'isAutoBorrow':'true|False',
         #       'isNewBook':'true|False'
         #       ''
