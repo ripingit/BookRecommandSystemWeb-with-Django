@@ -6,6 +6,7 @@ from bookRecommand.models import  LoginForm
 import bookRecommand
 from DataBaseManagement.database import MyDataBase
 from modeles.Book import Book
+from Scheduler.scheduler import scheduled
 import re
 #=========================================
 # 首页
@@ -240,6 +241,26 @@ def bookDetail(request,ISBN):
 #========================================
 def trueIndex(request):
     return render(request,'bookRecommand/index.html')
+
+#===========================================
+# 设置自动续借
+# 由客户端Ajax请求
+#===========================================
+def autoBorrow(request):
+    data = request.POST
+    sched = scheduled.borrowSched
+    userName = data.get('userName')
+    password = data.get('password')
+    key = data.get('key')
+
+    # 恢复自动续借功能
+    if key=='resumed':
+        pass
+    else:
+        # 暂停自动续借功能
+        pass
+
+    return HttpResponse('succeed')
 
 import json
 #======================================

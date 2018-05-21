@@ -25,29 +25,65 @@
 			$(".setup").css("display","none");
 		}
 	</script>
+	<style>
+		#head{
+			height: 700px;
+		}
+
+	</style>
 </head>
 <body class="home">
 
+<script>
+	// 设置进行自动新书速递
+	$(document).ready(function(){
+		$('#openNewBookPush').click(function(){
+			if($(this).attr('already')!="false"){
+				$(this).html('新书速递');
+				$(this).attr('already',false);
+			}else{
+				$(this).append('&nbsp;√');
+				$(this).attr('already',true);
+			}
+		});
+	});
+	// 设置进行自动续借
+	$(document).ready(function(){
+		$('#openAutoBorrowPush').click(function(){
+			if($(this).attr('already')!="false"){
+				$(this).html('自动续借');
+				$(this).attr('already',false);
+			}else{
+				$(this).append('&nbsp;√');
+				$(this).attr('already',true);
+			}
+		});
+	});
+	// 续借全部书籍
+	$(document).ready(function(){
+		$('#openBorrowAllNoPush').click(function(){
+			alert("续借成功，相关信息已发送至邮箱~");
+		});
+	});
+</script>
 <!-- Logo与登录界面 -->
-<header id="header">
+<!--<header id="header">-->
+<div id="centerAuto">
 	<div id="head" class="parallax" parallax-speed="1">
-		
 		<!--设置新书速递以及自动续借和续借全部书籍-->
-		<ul class="setup">
-			<li id="openNewBookPush">新书速递</li>
+		<ul class="setup" onmouseleave="disableSetUp();">
+			<li id="openNewBookPush" already='false'>新书速递</li>
 			<li id="openAutoBorrowPush">自动续借</li>
 			<li id="openBorrowAllNoPush">续借全部书籍</li>
 		</ul>
-		
+
 		<h1 id="logo" class="text-center">Szpt BookSystem</h1>
 		<!--搜索条-->
-		<!--搜索条-->
 		<div class="searchBar">
-			<form action="/bookSystem/searchwithpymongo" method="GET">
-				{% csrf_token %}
+			<form action="" method="post">
 				<select name="find_code" id="find_code">
 				     <option value="AllKeyButNotCatalog" selected="">所有字段(除目录)</option>
-				     <option value="AllKey">所有字段</option>
+				     <option value="AllKey" selected="">所有字段</option>
 				     <option value="CatalogKey">目录</option>
 				     <option value="BookNameKey">题名关键词</option>
 				     <option value="BookAuthorKey">著者</option>
@@ -56,19 +92,19 @@
 				     <option value="IndexKey">索书号</option>
 				     <option value="SystemNumberKey">系统号</option>
 			    </select>
-				<input id="searchInput" type="text" name="searchKey" value="{{ searchKey }}" />
+				<input id="searchInput" type="text" name="searchKey" />
 				<input type="submit" value="检索" />
+			</form>
 				<div id="operate">
 					<span id="label">排序：</span>
-					<select name="sort" id="sort">
+					<select name="sort" onchange="if(this.value)window.location=this.value" id="sort">
 						<option value="Year-Rating-Person" selected="">年/评分/评论人数(降序)</option>
 						<option value="Rating-Year-Person">评分/年/评论人数(降序)</option>
 						<option value="Person-Year-Rating">评论人数/年/评分(降序)</option>
 					</select>
 				</div>
-			</form>
 		</div>
-		
+
 		<!--登录界面,登录之前-->
 		<!--<div class="topy login">
 			<table cellspacing="0" cellpadding="0">
@@ -88,14 +124,14 @@
 			<input type="hidden" name="quickforward" value="yes">
 			<input type="hidden" name="handlekey" value="ls">
 		</div>-->
-		
+
 		<!--
         	登录之后
         -->
 		<div class="login topy">
 			<p>
 				<strong class="vwmy"><a href="http://rpg.blue/home.php?mod=space&amp;uid=110281" target="_blank" title="访问我的空间">sjm906739171</a></strong>
-				<span class="pipe">|</span><a href="javascript:;" id="myitem" class="showmenu" onmouseover="showSetUp();" onmouseout="disableSetUp();" initialized="true">我的</a>
+				<span class="pipe">|</span><a href="javascript:;" id="myitem" class="showmenu" onmouseover="showSetUp();" initialized="true">我的</a>
 				<span class="pipe">|</span><a href="http://rpg.blue/home.php?mod=spacecp">设置</a>
 				<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=8aed034c">退出</a>
 			</p>
@@ -115,7 +151,7 @@
 			</div>		
 		</div>	
 	</nav>
-</header>
-
+<!--</header>-->
+</div>
 </body>
 </html>

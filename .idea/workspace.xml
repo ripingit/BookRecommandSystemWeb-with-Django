@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7c77a31-e4d5-444c-8b37-943c36b8729f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Scheduler/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scheduler/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scheduler/scheduler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spider/DouBanSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/DouBanSpider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spider/abandoned/douBanSpider.log" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/abandoned/douBanSpider.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spider/douBanSpider.log" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/douBanSpider.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spider/getProxies.py" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/getProxies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookRecommand/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bookRecommand/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bookRecommand/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,64 +23,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="clearMongodb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Spider/abandoned/clearMongodb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-              <folding>
-                <element signature="e#73#94#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bookSearch.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/bookRecommand/bookSearch.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1187">
-              <caret line="60" column="14" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="60" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#3;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#4;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#5;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#6;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#7;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bookRecommand/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="245" column="6" lean-forward="true" selection-start-line="245" selection-start-column="6" selection-end-line="245" selection-end-column="6" />
+            <state relative-caret-position="332">
+              <caret line="140" column="28" lean-forward="true" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-                <element signature="e#385#439#0" />
-                <element signature="e#475#591#0" />
-                <element signature="e#706#963#0" />
-                <element signature="e#1002#1125#0" />
-                <element signature="e#1239#7487#0" />
-                <element signature="e#7743#7986#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/bookRecommand/index.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bookRecommand/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="60" column="24" lean-forward="true" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -92,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="douBanSpider.log" pinned="false" current-in-tab="false">
+      <file leaf-file-name="douBanSpider.log" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Spider/abandoned/douBanSpider.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="100">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -104,8 +70,8 @@
       <file leaf-file-name="DouBanSpider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="262">
+              <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -113,8 +79,8 @@
       <file leaf-file-name="DouBanSpider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider/DouBanSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1059">
-              <caret line="100" column="26" lean-forward="true" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+            <state relative-caret-position="-4238">
+              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -122,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getProxies.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getProxies.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider/getProxies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+            <state relative-caret-position="1836">
+              <caret line="52" column="31" selection-end-line="52" selection-end-column="31" />
               <folding>
                 <element signature="e#86#101#0" expanded="true" />
               </folding>
@@ -137,8 +103,26 @@
       <file leaf-file-name="douBanSpider.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Spider/douBanSpider.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="36">
+              <caret line="1" column="10" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/bookRecommand/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1116">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28872">
+              <caret line="802" column="14" selection-start-line="802" selection-start-column="14" selection-end-line="802" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -185,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/bookRecommand/login.html" />
         <option value="$PROJECT_DIR$/Spider/__init__.py" />
         <option value="$PROJECT_DIR$/Scheduler/schedulerTest.py" />
         <option value="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/test.css" />
@@ -193,7 +176,6 @@
         <option value="$PROJECT_DIR$/Pyemail/test.py" />
         <option value="$PROJECT_DIR$/Pyemail/emailManger.py" />
         <option value="$PROJECT_DIR$/Spider/loginSpider.py" />
-        <option value="$PROJECT_DIR$/Scheduler/scheduler.py" />
         <option value="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" />
         <option value="$PROJECT_DIR$/Spider/libraryCollectionSpider.py" />
         <option value="$PROJECT_DIR$/Spider/douBanSpider.py" />
@@ -225,23 +207,25 @@
         <option value="$PROJECT_DIR$/modeles/Book.py" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/test.html" />
         <option value="$PROJECT_DIR$/Spider/test.py" />
-        <option value="$PROJECT_DIR$/Spider/getProxies.py" />
         <option value="$PROJECT_DIR$/DataBaseManagement/database.py" />
         <option value="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/bookSystem.css" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/bookDetail.html" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/bookSearch.html" />
-        <option value="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css" />
-        <option value="$PROJECT_DIR$/bookRecommand/views.py" />
         <option value="$PROJECT_DIR$/bookRecommand/urls.py" />
+        <option value="$PROJECT_DIR$/Scheduler/test.py" />
+        <option value="$PROJECT_DIR$/Scheduler/scheduler.py" />
+        <option value="$PROJECT_DIR$/Spider/getProxies.py" />
+        <option value="$PROJECT_DIR$/bookRecommand/views.py" />
+        <option value="$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/index.html" />
-        <option value="$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py" />
         <option value="$PROJECT_DIR$/Spider/DouBanSpider.py" />
+        <option value="$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="231" />
-    <option name="width" value="1369" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="246" />
+    <option name="width" value="1354" />
     <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -252,7 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,12 +246,28 @@
             <path>
               <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBaseManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="modeles" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bookRecommand" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -296,6 +295,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +328,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.DouBanSpider (1)">
+  <component name="RunManager" selected="Python.DouBanSpider">
     <configuration name="DouBanSpider (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BookRecommendSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -401,7 +401,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BookRecommendSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -409,11 +409,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Spider" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scheduler" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Spider/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scheduler/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -421,18 +421,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.DouBanSpider" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.getHeader" />
       <item itemvalue="Python.getProxies" />
       <item itemvalue="Python.DouBanSpider (1)" />
+      <item itemvalue="Python.test (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.DouBanSpider (1)" />
         <item itemvalue="Python.DouBanSpider" />
+        <item itemvalue="Python.DouBanSpider (1)" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.getProxies" />
         <item itemvalue="Python.getHeader" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -450,14 +450,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="231" y="0" width="1369" height="860" extended-state="0" />
+    <frame x="246" y="0" width="1354" height="860" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1833208" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18389058" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.88590604" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36149585" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.73545706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32885906" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -473,21 +473,21 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.228125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22076215" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -538,17 +538,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Spider/SchoolBookSystemSpider/SchoolBookSystemSpider/spiders/DouBanSpider.py">
+    <entry file="file://$PROJECT_DIR$/Spider/DouBanSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/SchoolBookSystemSpider/TestScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        <state relative-caret-position="3348">
+          <caret line="100" column="26" lean-forward="true" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,24 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/autoInformLibraryFreeBook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Spider/proxies.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBaseManagement/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -791,16 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookRecommand/static/bookRecommand/images/bookImage.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="805" lean-forward="true" selection-start-line="805" selection-end-line="805" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/bookRecommand/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -808,10 +780,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bookRecommand/bookSearch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="60" column="14" selection-start-line="34" selection-start-column="8" selection-end-line="60" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spider/abandoned/clearMongodb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBaseManagement/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scheduler/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scheduler/scheduler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spider/autoInformLibraryFreeBook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bookRecommand/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        <state relative-caret-position="252">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -827,98 +841,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bookRecommand/bookSearch.html">
+    <entry file="file://$PROJECT_DIR$/bookRecommand/static/bookRecommand/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1187">
-          <caret line="60" column="14" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="60" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#td#2;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#3;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#4;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#5;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#6;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#7;n#fieldset#0;n#div#1;n#aside#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="28872">
+          <caret line="802" column="14" selection-start-line="802" selection-start-column="14" selection-end-line="802" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/bookRecommand/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="60" column="24" lean-forward="true" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        <state relative-caret-position="1116">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bookRecommand/views.py">
+    <entry file="file://$PROJECT_DIR$/Spider/getProxies.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="245" column="6" lean-forward="true" selection-start-line="245" selection-start-column="6" selection-end-line="245" selection-end-column="6" />
+        <state relative-caret-position="1836">
+          <caret line="52" column="31" selection-end-line="52" selection-end-column="31" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#385#439#0" />
-            <element signature="e#475#591#0" />
-            <element signature="e#706#963#0" />
-            <element signature="e#1002#1125#0" />
-            <element signature="e#1239#7487#0" />
-            <element signature="e#7743#7986#0" />
+            <element signature="e#86#101#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/abandoned/clearMongodb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="e#73#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/abandoned/douBanSpider.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/douBanSpider.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Spider/DouBanSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1059">
-          <caret line="100" column="26" lean-forward="true" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+        <state relative-caret-position="-4238">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/getProxies.py">
+    <entry file="file://$PROJECT_DIR$/Spider/douBanSpider.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="45" column="33" lean-forward="true" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        <state relative-caret-position="36">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spider/abandoned/DouBanSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookRecommand/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="140" column="28" lean-forward="true" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="28" />
           <folding>
-            <element signature="e#86#101#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spider/abandoned/douBanSpider.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

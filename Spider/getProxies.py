@@ -43,8 +43,11 @@ class ProxiesSpider(object):
                     print('正在获取代理ip')
                     proxiesResponse = requests.get(url=self.verificationUrl,proxies=proxies,timeout=40)
                     self.proxiesSet.add(proxiesUrl)
-                    yield proxies
+                    return proxies
                 except:
                     pass
             self.page += 1
+            if self.page >= 1000:
+                self.page = 0
+                self.proxiesSet.clear()
 proxiesspider = ProxiesSpider()

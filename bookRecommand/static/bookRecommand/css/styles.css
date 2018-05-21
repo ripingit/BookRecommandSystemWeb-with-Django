@@ -270,6 +270,7 @@ a:hover {
 }
 .home #head {
   padding: 90px 0;
+  padding-top: 300px;
 }
 .home #head .title {
   font-size: 49px;
