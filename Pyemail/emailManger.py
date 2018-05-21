@@ -17,6 +17,7 @@ def sendEmail(content,title,receivers = ('16240011@mail.szpt.edu.cn',)):
     smtpObj.login(mail_user,mail_pass)
     smtpObj.send_message(from_addr=sender,to_addrs=receivers,msg=message)
 
+
 if __name__ == "__main__":
     # a = b'\xc7\xeb\xca\xb9\xd3\xc3\xca\xda\xc8\xa8\xc2\xeb\xb5\xc7\xc2\xbc\xa1\xa3\xcf\xea\xc7\xe9\xc7\xeb\xbf\xb4'
     # print(a.decode('gbk'))

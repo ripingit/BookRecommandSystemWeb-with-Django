@@ -10,21 +10,18 @@ from scrapy import log
 
 class SchoolbooksystemspiderPipeline(object):
     def __init__(self):
-        client = MongoClient('mongodb://39.108.176.18/', 27017)
+        client = MongoClient('mongodb://127.0.0.1/', 27017)
         self.db = client.pythonLessonExamData
         self.collection = self.db.BookData
+        self.newCollection = self.db.newBookData
     def process_item(self, item, spider):
         if self.collection.find_one({'_id':item['ISBN']}):
-            self.collection.update(
-                {'_id':item['ISBN']},
-                {
-                    '$set':{
-                        'systemNumber':item['systemNumber']
-                    }
-                })
+            self.collection.update({'_id':item['ISBN']},{'$set':{'author':item.get('author')}})
         else:
             try:
                 self.collection.insert(item)
+                # 新书，插入新书表
+                self.newCollection.insert(item)
             except Exception as e:
                 print('发生了异常:',e)
                 print('发生异常时的item是:',item)

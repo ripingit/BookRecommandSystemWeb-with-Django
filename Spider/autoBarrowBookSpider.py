@@ -151,7 +151,7 @@ def autoBorrow(response,bookDetailList):
 # 下面是简化版的续借函数，该函数可通过apscheduler进行调度，
 # 每经过一天运行一次，每次对紧急书籍进行检查（即还书日期小于7天的书籍），
 # 对紧急书籍进行自动续借，同时将续借成功和续借失败的书籍发到邮箱内对用户进行提醒
-def wholeAutoBorrow(user,password):
+def wholeAutoBorrow(user,password,receivers=('16240011@mail.szpt.edu.cn',)):
     # 首先进行登录操作,获得登录后的界面
     response = loginSpider.login(user, password)[1]
 
@@ -170,22 +170,20 @@ def wholeAutoBorrow(user,password):
     fails = borrowResult[1]
 
     # 发送邮件通知用户
-    if len(urgentBooks) >= 0:
+    if len(urgentBooks) >= 0 or True:
+        successCotent = ''.join(['<li>'+bookName+'</li>' for bookName in sucess])
+        failCotent = ''.join(['<li>' + bookName + '</li>' for bookName in fails])
         content = '''
             <p>续借成功的书籍有:</p>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+                {successContent}
             </ul>
             <p>续借失败的书籍有:</p>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+               {failContent}
             </ul>
-        '''
-        emailManger.sendEmail(content=content,title='图书借阅系统')
+        '''.format(successContent=successCotent,failContent=failCotent)
+        emailManger.sendEmail(content=content,title='图书借阅系统',receivers=receivers)
 
 if __name__ == "__main__":
     # response = loginSpider.login('16240011','19970904')[1]

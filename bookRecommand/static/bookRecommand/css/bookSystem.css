@@ -171,3 +171,27 @@ a.watchMore:hover{
 	display: inline-block;
 	text-align: center;
 }
+
+/*===================设置特别关注================*/
+.specialAttention{
+	border: 1px gray solid;
+	margin: 10px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+span.specialLabel{
+	color: red;
+	background: gainsboro;
+}
+.margintop{
+	margin-bottom: 150px;
+}
+
+/*======================登录界面==================*/
+.loginGraphic{
+	background: whitesmoke;
+
+}
+.loginContent{
+	width: 300px;
+}

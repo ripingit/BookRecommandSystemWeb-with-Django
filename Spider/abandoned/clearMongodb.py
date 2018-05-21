@@ -8,34 +8,42 @@ client = MongoClient('mongodb://127.0.0.1',27017)
 db = client.pythonLessonExamData
 collection = db.BookData
 count = db.BookData.find().count()
-for data in collection.find():
-    print(data.get('bookName'))
-    print(data.get('bookName').split('\xa0')[0].strip())
-# for skip in range(0, count + 1, 1000):
-#     books = list(db.BookData.find().limit(1000).skip(skip))
-#     for bookData in books:
-#         ISBN = bookData.get('ISBN')
-#         print(ISBN)
-#         try:
-#             publishYear = int(bookData.get('publishYear',-1))
-#         except:
-#             publishYear = -1
-#         try:
-#             publisher = re.split(':|,',bookData.get('publisher', '暂无'))[1].strip()
-#         except:
-#             publisher = '暂无'
-#         try:
-#             ratingAverage = float(bookData.get('ratingAverage',-1))
-#         except:
-#             ratingAverage = -1
-#         try:
-#             ratingNumberRaters = int(bookData.get('ratingNumberRaters',-1))
-#         except:
-#             ratingNumberRaters = -1
-#         collection.update({'ISBN':ISBN},
-#                           {'$set':{
-#                               'publishYear':publishYear,
-#                               'publisher':publisher,
-#                               'ratingAverage':ratingAverage,
-#                               'ratingNumberRaters':ratingNumberRaters}
-#                           })
+for skip in range(0, count + 1, 1000):
+    print(skip)
+    books = list(db.BookData.find().limit(1000).skip(skip))
+    for bookData in books:
+        ISBN = bookData.get('ISBN')
+        print(ISBN)
+        try:
+            publishYear = int(bookData.get('publishYear',-1))
+        except:
+            publishYear = -1
+        publisher = None
+        if bookData.get('publisher', '暂无').find(':')!=-1 or bookData.get('publisher', '暂无').find(',')!=-1:
+            try:
+                publisher = re.split(':|,',bookData.get('publisher', '暂无'))[1].strip()
+            except:
+                publisher = '暂无'
+        try:
+            ratingAverage = float(bookData.get('ratingAverage',-1))
+        except:
+            ratingAverage = -1
+        try:
+            ratingNumberRaters = int(bookData.get('ratingNumberRaters',-1))
+        except:
+            ratingNumberRaters = -1
+        if publisher:
+            collection.update({'ISBN':ISBN},
+                              {'$set':{
+                                  'publishYear':publishYear,
+                                  'publisher':publisher,
+                                  'ratingAverage':ratingAverage,
+                                  'ratingNumberRaters':ratingNumberRaters}
+                              })
+        else:
+            collection.update({'ISBN': ISBN},
+                              {'$set': {
+                                  'publishYear': publishYear,
+                                  'ratingAverage': ratingAverage,
+                                  'ratingNumberRaters': ratingNumberRaters}
+                              })

@@ -23,6 +23,7 @@ class ProxiesSpider(object):
         self.totalPage = 1000
     def getProxies(self):
         while self.page<=self.totalPage:
+            print('当前页数:',self.page)
             url = self.url.format(page=self.page)
             response = requests.get(url=url,headers=self.headers)
             selector = etree.HTML(response.text)
@@ -40,7 +41,7 @@ class ProxiesSpider(object):
                     'https': proxiesUrl
                 }
                 try:
-                    print('正在获取代理ip')
+                    print(proxies,'正在获取代理ip')
                     proxiesResponse = requests.get(url=self.verificationUrl,proxies=proxies,timeout=40)
                     self.proxiesSet.add(proxiesUrl)
                     return proxies

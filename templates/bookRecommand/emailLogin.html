@@ -38,39 +38,44 @@
 					<h3 class="flb">
 						<em id="returnmessage_LHo41"> </em> <span></span>
 					</h3>
-					<center>
-						<p style="color: red;">{{errorMessage}}</p>
-					</center>
+
 					<!-- 登录post -->
-					<form method="post" name="login" id="loginform_LHo41" class="cl" action="/bookSystem/login">
+					<form method="post" name="login" id="loginform_LHo41" class="cl" action="checkLogin.bin">
                         {% csrf_token %}
 						<div class="c cl">
-							<!-- 账号 -->
+							<!-- 邮箱 -->
 							<div class="rfm">
 								<table>
 									<tbody>
 										<tr>
-											<th><label for="username_LHo41">帐号:</label></th>
-											<td><input type="text" name="username"
-												id="username_LHo41" size="30"
-												class="px p_fre" tabindex="1" value="{{userName}}"></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!-- 密码 -->
-							<div class="rfm">
-								<table>
-									<tbody>
-										<tr>
-											<th><label for="password3_LHo41">密码:</label></th>
-											<td><input type="password" id="password3_LHo41"
+											<th><label>邮箱:</label></th>
+											<td><input type="password"
 												name="password" onfocus="" size="30"
 												class="px p_fre" tabindex="1"></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
+							<!-- 验证码 -->
+							<span id="seccode_cSb3tr3t">
+								<div class="rfm">
+										<table>
+											<tbody>
+												<tr>
+													<th>邮箱验证码:</th>
+													<td>
+														<input name="seccodeverify" id="seccodeverify_cSb3tr3t" type="text"
+															style="ime-mode: disabled; width: 100px" class="txt px vm"
+															onblur="#">
+															<a href="#" onclick="$(graphhashcode).attr('src',$(graphhashcode).attr('src')+'?'+Math.random());" class="xi2">发送邮箱验证码</a>
+															<span id="checkseccodeverify_cSb3tr3t">
+														</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+								</div>
+							</span>
 							<!-- 登录按钮 -->
 							<div class="rfm mbw bw0">
 								<table width="100%">

@@ -2,11 +2,13 @@ from django.shortcuts import render,redirect,reverse
 
 from django.http import HttpResponse, HttpResponseRedirect
 
+from Spider import loginSpider
 from bookRecommand.models import  LoginForm
 import bookRecommand
 from DataBaseManagement.database import MyDataBase
 from modeles.Book import Book
 from Scheduler.scheduler import scheduled
+from DataBaseManagement.database import MyDataBase
 import re
 #=========================================
 # 首页
@@ -20,16 +22,70 @@ def detail(request,**kwargs):
     }
     return render(request,'bookRecommand/detail.html',context=data)
 
+
+#========================================================================
+# 预登陆界面，也就是如果在首页或者其他可以看到登录按钮的页面按下登录后
+# ，触发预登陆控制器，控制器将请求转发至登录界面
+#=======================================================================
+def preLogin(request):
+    '''
+        如果登录成功，给用户的session设置一个
+        {
+            isLogin:True,
+            userName:userName,
+        }
+    '''
+
+    if request.method == 'POST':
+        # 获得Post过来的数据
+        data = request.POST
+
+        userName = data.get('username','')
+        password = data.get('password','')
+
+        # 验证数据是否合法,也就是是否能登录szpt图书馆
+        # 如果用户什么也没填，跳转至登录页面，如果用户填了数据
+        # 对数据进行验证，验证失败，跳转至登录页面（同时附加错误信息），
+        # 验证成功，则判断用户是否是第一次登录，如果是第一次登录
+        # 进入邮箱设置页面，设置完成时，插入该用户的信息，并将用户
+        # 的登录状态设为已登录，跳转至搜索页面，如果不是第一次登录，
+        # 直接跳转到搜索页面。
+        if loginSpider.login(userName, password)[0]:
+            # 验证成功,查看用户是否是第一次登录
+
+            mydatabase = MyDataBase()
+            if mydatabase.isFirstLogin(userName):
+                userData = {
+                    'userName':userName,
+                    'password':password
+                }
+                mydatabase.userData.insert(userData)
+                # 是第一次登录,跳转至邮箱设置界面,并将用户数据插入数据库
+                result = render(request,'bookRecommand/setup.html')
+            else:
+                # 不是第一次登录
+                request.session['isLogin'] = True
+                request.session['userName'] = userName
+                result = render(request,'bookRecommand/bookSearch.html')
+            mydatabase.client.close()
+            return result
+        else:
+            # 账号验证失败,跳转至登录界面进行登录，并给出错误信息
+            context = {
+                'userName':userName,
+                'password':password,
+                'errorMessage':'账号验证失败，请查看你的用户与密码是否可以登录深职院的图书馆系统'
+            }
+            return render(request,'bookRecommand/login.html',context=context)
+    else:
+        request.session['isLogin'] = False
+        request.session['userName'] = ''
+        return render(request,'bookRecommand/bookSearch.html')
 #======================================
 # 进行登录操作
 #======================================
 def login(request):
-    if request.method == "POST":
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            request.session['isLogin'] = True
-            request.session['user'] = form.data['username']
-    return redirect(reverse(bookRecommand.views.index))
+    return render(request,'bookRecommand/login.html')
 
 # 退出登录操作
 def quitLogin(request):
@@ -267,8 +323,58 @@ import json
 # 用于测试
 #=======================================
 def _test(request):
-    context = {
-        'book':Book(bookName='sjm',ratingGraphic=[[0, 'false'], [1, 'false'], [2, 'false'], [3, 'false'], [4, 'false']])
-    }
-    # context = json.dumps(context)
-    return render(request,'bookRecommand/test.html',context=context)
+    _json = {'succeed':True}
+    return HttpResponse(json.dumps(_json),content_type="application/json")
+def ttest(request):
+    return render(request, 'bookRecommand/setup.html')
+
+#============================================
+#  当用户开启自动续借时的验证
+#+==========================================
+def autoBorrowCheck(request):
+    result = False
+
+    database = MyDataBase()
+    if database.hasEmail(userName=request.session.get('userName',None)):
+        result = True
+    _json = {'succeed':result}
+
+    if result:
+        data = database.userData.find_one({'userName':request.session.get('userName')})
+        userName = data.get('userName')
+        password = data.get('password')
+        email = data.get('email')
+        # 表示开启自动续借的功能
+        scheduled.addAutoBorrow(userName,password,(email,))
+
+    return HttpResponse(json.dumps(_json),content_type="application/json")
+#============================================
+#  当用户开启新书速递时的验证
+#+==========================================
+def newBookCheck(request):
+    result = False
+
+    database = MyDataBase()
+    if database.hasEmail(userName=request.session.get('userName',None)) and database.hasTags(userName=request.session.get('userName',None)):
+        result = True
+    _json = {'succeed':result}
+
+    if result:
+        # 表示用户开启新书速递功能，在这基础上，会开启邮件通知用户，如果用户的特别关注名单上有东西
+        pass
+
+    database.client.close()
+    return HttpResponse(json.dumps(_json),content_type="application/json")
+
+#=========================================
+# 为用户设置邮箱
+#+=======================================
+def sendMessage(request):
+    data = request.GET
+    email = data.get('email',None)
+    userName = request.session.get('userName',None)
+    if userName and email:
+        mydatabase = MyDataBase()
+        mydatabase.userData.update({'userName':userName},{'$set':{'email':email}})
+        mydatabase.client.close()
+    return render(request,'bookRecommand/setup.html')

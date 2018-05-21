@@ -30,6 +30,7 @@ class ProxiesSpider(object):
         self.totalPage = 1000
     def getProxies(self):
         while self.page<=self.totalPage:
+            print('当前页数:',self.page)
             url = self.url.format(page=self.page)
             response = requests.get(url=url,headers=self.headers)
             selector = etree.HTML(response.text)
@@ -41,20 +42,24 @@ class ProxiesSpider(object):
                 proxiesUrl = https + ':' + port
 
                 if proxiesUrl in self.proxiesSet:
+                    print('set:',self.proxiesSet)
                     continue
 
                 proxies = {
                     'https': proxiesUrl
                 }
                 try:
-                    print('正在获取代理ip')
+                    print(proxies,'正在获取代理ip')
+                    print('set:', self.proxiesSet)
                     proxiesResponse = requests.get(url=self.verificationUrl,proxies=proxies,timeout=40)
-                    self.proxiesSet.add(proxiesUrl)
                     return proxies
                 except:
                     pass
+                finally:
+                    self.proxiesSet.add(proxiesUrl)
             self.page += 1
             if self.page >= 1000:
+                print('清空')
                 self.page = 0
                 self.proxiesSet.clear()
 
@@ -80,7 +85,7 @@ class DouBanSpider(object):
         self.proxiesspider = ProxiesSpider()
     def start_request(self):
         count = self.db.BookData.find().count()
-        for skip in range(14100,count+1,100):
+        for skip in range(19200,count+1,100):
             self.file.write('skip:'+str(skip)+'\n')
             self.file.flush()
             books = list(self.db.BookData.find().limit(100).skip(skip))
@@ -127,7 +132,7 @@ class DouBanSpider(object):
             self.file.flush()
             try:
                 if self.proxies:
-                    response = requests.get(url=url, headers=self.headers,proxies=self.proxies)
+                    response = requests.get(url=url, headers=self.headers,proxies=self.proxies,timeout=40)
                 else:
                     response = requests.get(url=url, headers=self.headers)
             except:

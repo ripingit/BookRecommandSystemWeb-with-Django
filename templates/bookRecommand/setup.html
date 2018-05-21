@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load bookRecommand_tags %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Blog post | Initio - Free, multipurpose html5 template by GetTemplate</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="{% static 'bookRecommand/css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'bookRecommand/css/bookSystem.css' %}" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+</head>
+
+<script>
+	function autoBorrowFun(){
+		$('#autoBorrowinfor').html("正在进行验证~~~");
+		$.get('/bookSystem/autoBorrow',function(data,status){
+			if(data.succeed == true){
+				$('#autoBorrowinfor').html("验证成功，已开启该功能");
+				$('#autoBorrowCheckBox').attr('checked','');
+			}else{
+				$('#autoBorrowinfor').html("验证失败~~请先设置您的邮箱");
+			}
+		})
+	}
+	function newBookFun(){
+		$('#newBookinfor').html("正在进行验证~~~");
+		$.get('/bookSystem/newBook',function(data,status){
+			if(data.succeed == true){
+				$('#newBookinfor').html("验证成功，已开启该功能");
+				$('#newBookCheckBox').attr('checked','');
+			}else{
+				$('#newBookinfor').html("验证失败~~请先设置您的邮箱和您的特别关注标签");
+			}
+		})
+	}
+</script>
+<style>
+	.margintop{
+		margin-bottom: 200px;
+	}
+</style>
+<body>
+
+<!-- Logo与登录界面 -->
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="1">
+
+		<!--设置新书速递以及自动续借和续借全部书籍-->
+		<ul class="setup">
+			<li id="openNewBookPush">新书速递</li>
+			<li id="openAutoBorrowPush">自动续借</li>
+			<li id="openBorrowAllNoPush">续借全部书籍</li>
+		</ul>
+
+		<h1 id="logo" class="text-center">Szpt BookSystem</h1>
+		<!--搜索条-->
+		<div class="searchBar">
+			<form action="" method="post">
+				<select name="find_code" id="find_code">
+				     <option value="AllKeyButNotCatalog" selected="">所有字段(除目录)</option>
+				     <option value="AllKey" selected="">所有字段</option>
+				     <option value="CatalogKey">目录</option>
+				     <option value="BookNameKey">题名关键词</option>
+				     <option value="BookAuthorKey">著者</option>
+				     <option value="BookPublisherKey">出版社</option>
+				     <option value="ISBNKey">ISBN</option>
+				     <option value="IndexKey">索书号</option>
+				     <option value="SystemNumberKey">系统号</option>
+			    </select>
+				<input id="searchInput" type="text" name="searchKey" />
+				<input type="submit" value="检索" />
+			</form>
+				<div id="operate">
+					<span id="label">排序：</span>
+					<select name="sort" onchange="if(this.value)window.location=this.value" id="sort">
+						<option value="Year-Rating-Person" selected="">年/评分/评论人数(降序)</option>
+						<option value="Rating-Year-Person">评分/年/评论人数(降序)</option>
+						<option value="Person-Year-Rating">评论人数/年/评分(降序)</option>
+					</select>
+				</div>
+		</div>
+
+		<!--登录界面,登录之前-->
+		<!--<div class="topy login">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td><label for="ls_username">帐号</label></td>
+						<td><input type="text" name="username" id="ls_username" class="px vm xg1" value="学号/Email" onfocus="if(this.value == '学号/Email'){this.value = '';this.className = 'px vm';}" onblur="if(this.value == ''){this.value = '学号/Email';}" tabindex="901"></td>
+						<td class="fastlg_l"><label for="ls_cookietime"><input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903">自动登录</label></td>
+					</tr>
+					<tr>
+						<td><label for="ls_password">密码</label></td>
+						<td><input type="password" name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902"></td>
+						<td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>登录</em></button></td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="hidden" name="quickforward" value="yes">
+			<input type="hidden" name="handlekey" value="ls">
+		</div>-->
+
+		<!--
+        	登录之后
+        -->
+		<div class="login topy">
+			<p>
+				<strong class="vwmy"><a href="http://rpg.blue/home.php?mod=space&amp;uid=110281" target="_blank" title="访问我的空间">sjm906739171</a></strong>
+				<span class="pipe">|</span><a href="javascript:;" id="myitem" class="showmenu" onmouseover="showSetUp();" onmouseout="disableSetUp();" initialized="true">我的</a>
+				<span class="pipe">|</span><a href="http://rpg.blue/home.php?mod=spacecp">设置</a>
+				<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=8aed034c">退出</a>
+			</p>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-collapse collapse">
+
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="blog.html">新书速递</a></li>
+					<li class="active"><a href="about.html">About</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+</header>
+
+<main id="main">
+
+	<div class="container margintop">
+
+		<div class="row topspace">
+
+			<!-- Sidebar -->
+			<aside class="col-sm-4 sidebar sidebar-right">
+
+				<ul class="nav text-right nav-side">
+					<li class="active"><a href="#ui">基本设置</a></li>
+					<li><a href="#ui">特别关注</a></li>
+					<li><a href="#frontend">馆藏空闲通知</a></li>
+				</ul>
+
+			</aside>
+			<!-- /Sidebar -->
+
+
+			<!--此处是设置邮箱的地方-->
+			<!--此处是设置邮箱的地方-->
+            {% getEmail request.session.userName as email %}
+            <article class="col-sm-8 maincontent">
+                {% if email %}
+                    <p style="color: red;">邮箱已设置，当前邮箱为:{{email}}</p>
+                {% else %}
+                    <p style="color: red;">您的邮箱还未进行设置，请进行设置，以便进行自动续借和新书速递的推送</p>
+                {% endif %}
+
+
+				<form action="/bookSystem/sendMessage" method="GET">
+					邮箱:<input type="text" name="email" style="width: 300px;" size="30" value="{{email}}" />
+					<input type="submit" value="设置" />
+				</form>
+				<div clss="autoBorrowDiv">
+					<span>开启自动续借功能·······</span>
+					<input id="autoBorrowCheckBox" type="checkbox" onclick="autoBorrowFun();return false;" />
+					<span style="color: red;" id="autoBorrowinfor"></span>
+				</div>
+				<div class="newBookDiv">
+					<span>开启新书速递功能·······</span>
+					<input id="newBookCheckBox" type="checkbox" onclick="newBookFun();return false;" />
+					<span style="color: red;" id="newBookinfor"></span>
+				</div>
+			</article>
+
+			<!-- 此处是设置特别关注的地方 -->
+			<!--<article class="col-sm-8 maincontent">
+				<p>设置我的特别关注标签，添加标签，在每月一次的新书速递中，如果遇到字段中含有特别关注的标签，将会给您定时推送。</p>
+				<br/>
+				<legend><span class="bookLabel">设置我的特别关注  · · · · · ·</span></legend>
+				<div class="specialAttention">
+                    <span class="specialLabel">Shader(目录)</span>，
+                    <span class="specialLabel">Unity(书名)</span>，
+                    <span class="specialLabel">行为树(目录)</span>，
+                    <span class="specialLabel">有限状态机(目录)</span>，
+				</div>
+				<div class="addSpecialAttention">
+					<form action="" method="POST">
+						关键字:<input type="text" name="key" />
+						包含关键字的字段:
+						<select name="find_code" id="find_code">
+					     	 <option value="AllKeyButNotCatalog" selected="">所有字段(除目录)</option>
+						     <option value="AllKey" selected="">所有字段</option>
+						     <option value="CatalogKey">目录</option>
+						     <option value="BookNameKey">题名关键词</option>
+						     <option value="BookAuthorKey">著者</option>
+						     <option value="BookPublisherKey">出版社</option>
+					    </select>
+					    <input type="submit" value="添加特别关注标签" />
+					</form>
+				</div>
+			</article>-->
+			<!-- /Article -->
+
+
+		</div>
+	</div>	<!-- /container -->
+
+</main>
+
+<footer id="footer" class="topspace">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Text widget</h3>
+				<div class="widget-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
+
+				</div>
+			</div>
+
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Form widget</h3>
+				<div class="widget-body">
+					<p>+234 23 9873237<br>
+						<a href="mailto:#">some.email@somewhere.com</a><br>
+						<br>
+						234 Hidden Pond Road, Ashland City, TN 37015
+					</p>
+				</div>
+			</div>
+
+		</div> <!-- /row of widgets -->
+	</div>
+</footer>
+
+</body>
+</html>

@@ -1,2 +1,3 @@
 from scrapy.cmdline import *
-execute(['scrapy','crawl','DouBanSpider'])
+def executeScrapy():
+    execute(['scrapy','crwal','DouBanSpider'])
