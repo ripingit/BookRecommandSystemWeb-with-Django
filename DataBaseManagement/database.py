@@ -46,7 +46,7 @@ class MyDataBase(object):
     def hasTags(self,userName):
         try:
             data = self.userData.find_one({'userName':userName})
-            if data.get('commonTags',None):
+            if data.get('CatalogKey',None) or data.get('BookNameKey',None) or data.get('BookAuthorKey',None) or data.get('BookPublisherKey',None):
                 return True
             else:
                 return False

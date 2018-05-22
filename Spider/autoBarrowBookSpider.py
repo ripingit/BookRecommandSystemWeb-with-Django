@@ -14,7 +14,7 @@ headers = {
     'Accept-Language' : 'zh-CN,zh;q=0.9' ,
     'Cache-Control' : 'max-age=0' ,
     'Connection' : 'keep-alive' ,
-    'Cookie' : 'UM_distinctid=1633a80bb95339-096e7ba2edcff7-444a022e-144000-1633a80bb9644f; yunsuo_session_verify=197473425a5828dc39985afe6c86cdd6' ,
+    'Cookie' : 'UM_distinctid=1633a80bb95339-096e7ba2edcff7-444a022e-144000-1633a80bb9644f; yunsuo_session_verify=96662bda9a10f66e8e6a5215f97e13ad' ,
     'Host' : 'opac.szpt.edu.cn:8991' ,
     'Upgrade-Insecure-Requests' : '1' ,
     'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36' ,
@@ -52,6 +52,7 @@ def getBorrowBooks(response):
 
     booksResponse = requests.get(url=href,headers=headers)
     booksResponse.encoding = 'utf-8'
+
     booksSelector = etree.HTML(booksResponse.text)
 
     books = booksSelector.xpath('//tr')
@@ -157,6 +158,7 @@ def wholeAutoBorrow(user,password,receivers=('16240011@mail.szpt.edu.cn',)):
 
     # 获得用户所借阅的所有书籍
     result = getBorrowBooks(response)
+
     books = result['borrowBooks']
     borrowResponse = result['booksResponse']
 
@@ -164,15 +166,15 @@ def wholeAutoBorrow(user,password,receivers=('16240011@mail.szpt.edu.cn',)):
     urgentBooks = getUrgentBorrowBooks(books)
 
     # 对紧急书籍进行借阅，得到续借成功和失败的书籍
-    borrowResult = autoBorrow(borrowResponse,urgentBooks)
+    borrowResult = autoBorrow(borrowResponse,books)
 
     sucess = borrowResult[0]
     fails = borrowResult[1]
 
     # 发送邮件通知用户
     if len(urgentBooks) >= 0 or True:
-        successCotent = ''.join(['<li>'+bookName+'</li>' for bookName in sucess])
-        failCotent = ''.join(['<li>' + bookName + '</li>' for bookName in fails])
+        successCotent = ''.join(['<li>'+str(bookName)+'</li>' for bookName in sucess])
+        failCotent = ''.join(['<li>' + str(bookName)+ '</li>' for bookName in fails])
         content = '''
             <p>续借成功的书籍有:</p>
             <ul>

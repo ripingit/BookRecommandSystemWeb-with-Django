@@ -64,9 +64,9 @@
 		{% if request.session.isLogin %}
 		<div class="login topy">
 			<p>
-				<strong class="vwmy"><a href="http://rpg.blue/home.php?mod=space&amp;uid=110281" target="_blank" title="访问我的空间">sjm906739171</a></strong>
+				<strong class="vwmy"><a href="" target="_blank" title="访问我的空间">{{request.session.userName}}</a></strong>
 				<span class="pipe">|</span><a href="javascript:;" id="myitem" class="showmenu" onmouseover="showMenu({'ctrlid':'myitem'});" initialized="true">我的</a>
-				<span class="pipe">|</span><a href="http://rpg.blue/home.php?mod=spacecp">设置</a>
+				<span class="pipe">|</span><a href="/bookSystem/ttest">设置</a>
 				<span class="pipe">|</span><a href="/bookSystem/quitLogin">退出</a>
 			</p>
 		</div>

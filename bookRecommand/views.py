@@ -2,10 +2,8 @@ from django.shortcuts import render,redirect,reverse
 
 from django.http import HttpResponse, HttpResponseRedirect
 
-from Spider import loginSpider
-from bookRecommand.models import  LoginForm
+from Spider import loginSpider,autoBarrowBookSpider
 import bookRecommand
-from DataBaseManagement.database import MyDataBase
 from modeles.Book import Book
 from Scheduler.scheduler import scheduled
 from DataBaseManagement.database import MyDataBase
@@ -215,13 +213,13 @@ def search(request):
                     bookUrl=data.get('bookUrl',''),
                     author=data.get('author',''),
                     content=data.get('content',''),
-                    publishYear=data.get('publishYear',-1),
+                    publishYear='暂无' if data.get('publishYear',-1)==-1 else data.get('publishYear'),
                     bookIndex=data.get('index',''),
                     publisher=data.get('publisher',''),
                     catalog=data.get('catalog',''),
                     douBanId=data.get('douBanId',''),
-                    doubanRating=data.get('ratingAverage',-1),
-                    doubanRatingPerson=data.get('ratingNumberRaters',-1),
+                    doubanRating='暂无' if data.get('ratingAverage',-1)==-1 else data.get('ratingAverage'),
+                    doubanRatingPerson='暂无' if data.get('ratingNumberRaters',-1)==-1 else data.get('ratingNumberRaters'),
                     doubanSummary=data.get('doubanSummary',''),
                     seriesTitle=data.get('seriesTitle',''),
                     systemNumber=data.get('systemNumber',''),
@@ -367,7 +365,7 @@ def newBookCheck(request):
 
     if result:
         # 表示用户开启新书速递功能，在这基础上，会开启邮件通知用户，如果用户的特别关注名单上有东西
-        pass
+        scheduled.addUserAutoNewBook(userName=request.session.get('userName',''))
 
     database.client.close()
     return HttpResponse(json.dumps(_json),content_type="application/json")
@@ -379,7 +377,7 @@ def sendMessage(request):
     data = request.GET
     email = data.get('email',None)
     userName = request.session.get('userName',None)
-    if userName and email:
+    if userName:
         mydatabase = MyDataBase()
         mydatabase.userData.update({'userName':userName},{'$set':{'email':email}})
         mydatabase.client.close()
@@ -404,3 +402,17 @@ def addSpecialAttention(request):
             print('添加成功!',key)
             mydatabase.client.close()
     return render(request,'bookRecommand/setup.html')
+
+
+def forceBorrowBookAndNewBook(request):
+    userName = request.session.get('userName', None)
+    mydatabase = MyDataBase()
+    data = mydatabase.userData.find_one({'userName': userName})
+    password = data.get('password')
+    email = data.get('email',None)
+    scheduled.newBookForUserAuto(userName,receivers=(email,))
+    if email:
+        autoBarrowBookSpider.wholeAutoBorrow(user=userName,password=password,receivers=(email,))
+    mydatabase.client.close()
+
+    return render(request, 'bookRecommand/setup.html')
