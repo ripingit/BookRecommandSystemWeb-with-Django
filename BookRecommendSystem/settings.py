@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookRecommand',
-    'haystack'
+    'haystack',
+    'externalInterface'
 ]
 
 # haystack配置项

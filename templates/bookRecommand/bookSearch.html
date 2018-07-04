@@ -150,19 +150,19 @@
 								{% if page <= 0 %}
 									<li><a href="">«</a></li>
 								{% else %}
-									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:-1}}&searchKey={{searchKey}}&findCode={{findCode}}">«</a></li>
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:-1}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">«</a></li>
 								{% endif %}
 
 								{% if page|add:-5 > 0 %}
-									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&findCode={{findCode}}">0</a></li>
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">0</a></li>
 									<li><a>.......</a></li>
 								{% endif %}
 
 								{% for p in range %}
 									{% if p == page %}
-										<li class="active"><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+										<li class="active"><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">{{ p }}</a></li>
 									{% else %}
-										<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+										<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">{{ p }}</a></li>
 									{% endif %}
 								{% endfor %}
 								{% if page|add:5 >= totalPage %}
@@ -170,11 +170,11 @@
 								{% else %}
 									<li><a>.......</a></li>
 								{% endif %}
-								<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{totalPage}}&searchKey={{searchKey}}&findCode={{findCode}}">{{totalPage}}</a></li>
+								<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{totalPage}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">{{totalPage}}</a></li>
 								{% if page >= totalPage %}
 									<li><a href="">»</a></li>
 								{% else %}
-									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:1}}&searchKey={{searchKey}}&findCode={{findCode}}">»</a></li>
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:1}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">»</a></li>
 								{% endif %}
 							</ul>
 						</center>
@@ -189,7 +189,7 @@
 					<div class="bookDetail">
 						<div class="bookDetailTitle">
 							<div class="bookImg">
-								<img height="150px" src="{% static 'bookRecommand/images/avatar_man.png' %}" />
+								<!--<img height="150px" src="{% static 'bookRecommand/images/avatar_man.png' %}" />-->
 							</div>
 							<legend >
 								<script>
@@ -233,7 +233,6 @@
 					</div>
 				</article>
 				<br/>
-				<hr style="border: 1px gray solid;" />
 				{% empty %}
 					<p>暂无书籍</p>
 				{% endfor %}
@@ -251,7 +250,7 @@
 						<span>年份:</span>
 						<ul>
 							{% for year in years %}
-								<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&findCode={{findCode}}&year={{year}}">{{year}}</a></li>
+								<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&find_code={{findCode}}&year={{year}}">{{year}}</a></li>
 							{% empty %}
 								<li><a href="">暂无年份可缩小</a></li>
 							{% endfor %}
@@ -308,19 +307,19 @@
 								{% if page <= 0 %}
 									<li><a href="">«</a></li>
 								{% else %}
-									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:-1}}&searchKey={{searchKey}}&findCode={{findCode}}">«</a></li>
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:-1}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">«</a></li>
 								{% endif %}
 
 								{% if page|add:-5 > 0 %}
-									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&findCode={{findCode}}">0</a></li>
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page=0&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">0</a></li>
 									<li><a>.......</a></li>
 								{% endif %}
 
 								{% for p in range %}
 									{% if p == page %}
-										<li class="active"><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+										<li class="active"><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">{{ p }}</a></li>
 									{% else %}
-										<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&findCode={{findCode}}">{{ p }}</a></li>
+										<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{p}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">{{ p }}</a></li>
 									{% endif %}
 								{% endfor %}
 								{% if page|add:5 >= totalPage %}
@@ -332,7 +331,7 @@
 								{% if page >= totalPage %}
 									<li><a href="">»</a></li>
 								{% else %}
-									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:1}}&searchKey={{searchKey}}&findCode={{findCode}}">»</a></li>
+									<li><a href="/bookSystem/searchwithpymongo?csrfmiddlewaretoken={{csrf}}&page={{page|add:1}}&searchKey={{searchKey}}&find_code={{findCode}}&sort={{sortCode}}">»</a></li>
 								{% endif %}
 							</ul>
 						</center>

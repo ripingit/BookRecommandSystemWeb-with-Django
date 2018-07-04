@@ -20,5 +20,6 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^bookSystem/',include('bookRecommand.urls')),
-    url(r'^search/',include('haystack.urls'))
+    url(r'^search/',include('haystack.urls')),
+    url(r'^interface/',include('externalInterface.urls'))
 ]

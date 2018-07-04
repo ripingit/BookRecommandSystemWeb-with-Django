@@ -103,6 +103,7 @@ def search(request):
     searchKey = request.GET.get('searchKey',None)
     sortKey = request.GET.get('sort','Year-Rating-Person')
     page = int(request.GET.get('page',0))
+    print('page:',request.GET.get('page'))
     year = request.GET.get('year',None)     # 用于检索条件的年份显示
     years = {}             # 用于侧边栏的年份显示
 
@@ -115,7 +116,8 @@ def search(request):
 
     # 判断查询码，构建查询字典
     if findCode == 'AllKeyButNotCatalog':
-        findData = {'$or':[
+        findData = \
+        {'$or':[
             {'bookName':{'$regex':searchKey,'$options':'i'}},
             {'content': {'$regex': searchKey, '$options': 'i'}},
             {'author': {'$regex': searchKey, '$options': 'i'}},
@@ -248,7 +250,8 @@ def search(request):
         'totalCount':totalCount,
         'totalPage':totalPage,
         'range':pageRange,
-        'years':years.keys()
+        'years':years.keys(),
+        'sortCode':sortKey
     }
     return render(request,'bookRecommand/bookSearch.html',context=context)
 
