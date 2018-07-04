@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7c77a31-e4d5-444c-8b37-943c36b8729f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/DataBaseManagement/mysqlDatabaseComment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spider/googleSpider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/externalInterface/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookRecommendSystem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/BookRecommendSystem/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookRecommendSystem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BookRecommendSystem/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spider/loginSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/loginSpider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookRecommand/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookRecommand/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookRecommand/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bookRecommand/bookSearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bookRecommand/bookSearch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/externalInterface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/externalInterface/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,14 +59,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/externalInterface/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="204">
+              <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#271#733#0" />
+                <element signature="e#805#1394#0" />
+                <element signature="e#1561#2291#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="autoBarrowBookSpider.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Spider/autoBarrowBookSpider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="167" column="30" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -216,7 +219,6 @@
         <option value="$PROJECT_DIR$/templates/bookRecommand/bookDetail.html" />
         <option value="$PROJECT_DIR$/DataBaseManagement/database.py" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/setup.html" />
-        <option value="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" />
         <option value="$PROJECT_DIR$/Scheduler/scheduler.py" />
         <option value="$PROJECT_DIR$/templates/bookRecommand/bookSearch.html" />
         <option value="$PROJECT_DIR$/BookRecommendSystem/settings.py" />
@@ -229,10 +231,11 @@
         <option value="$PROJECT_DIR$/DataBaseManagement/mysqlDatabaseComment.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/externalInterface/views.py" />
+        <option value="$PROJECT_DIR$/Spider/autoBarrowBookSpider.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="682" />
     <option name="width" value="918" />
     <option name="height" value="860" />
@@ -256,6 +259,11 @@
               <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
               <item name="externalInterface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookRecommendSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookRecommendSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="Spider" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -425,15 +433,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="682" y="0" width="918" height="860" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19545455" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17173637" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32963988" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.16481994" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32963988" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.333795" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32655826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32825485" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -510,7 +518,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="40" />
+      <option name="time" value="41" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -672,13 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7164">
           <caret line="199" column="22" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Spider/autoBarrowBookSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
         </state>
       </provider>
     </entry>
@@ -890,11 +891,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/externalInterface/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="204">
+          <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#271#733#0" />
+            <element signature="e#805#1394#0" />
+            <element signature="e#1561#2291#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Spider/autoBarrowBookSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="167" column="30" selection-start-line="167" selection-start-column="30" selection-end-line="167" selection-end-column="30" />
         </state>
       </provider>
     </entry>

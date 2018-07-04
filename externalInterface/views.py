@@ -71,3 +71,10 @@ def getWordCloud(request:HttpRequest):
         imageByteArr = imageByteArr.getvalue()
 
         return HttpResponse(imageByteArr,content_type='image/jpeg')
+    errorResult = {'status':False,'errorMsg':'请求词云出错'}
+    return HttpResponse(json.dumps(errorResult),content_type='application/json')
+
+
+# 用于自动续借的接口
+def autoBorrow(request:HttpRequest)->HttpResponse:
+    pass

@@ -165,6 +165,8 @@ def wholeAutoBorrow(user,password,receivers=('16240011@mail.szpt.edu.cn',)):
     # 获得紧急书籍
     urgentBooks = getUrgentBorrowBooks(books)
 
+    print('紧急书籍是:'+urgentBooks)
+
     # 对紧急书籍进行借阅，得到续借成功和失败的书籍
     borrowResult = autoBorrow(borrowResponse,books)
 
