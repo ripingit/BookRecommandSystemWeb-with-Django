@@ -6,5 +6,7 @@ app_names = 'externalInterface'
 urlpatterns = [
     url(r'^login$', views.login, name='login'),
     url(r'^getAudio$',views.getVoiceVerificationCode,name='getAudio'),
-    url(r'^getWordCloud$',views.getWordCloud,name='getWordCloud')
+    url(r'^getWordCloud$',views.getWordCloud,name='getWordCloud'),
+    url(r'^autoBorrow$',views.autoBorrow,name='autoBorrow'),
+    url(r'^getBookCollectionStatus$',views.getBookCollectionStatus,name='getBookCollectionStatus')
 ]

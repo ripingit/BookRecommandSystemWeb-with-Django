@@ -5,6 +5,7 @@
 from Spider import loginSpider
 import requests
 from lxml.html import etree
+import re
 
 # 输入图书的分馆位置以及系统号，对该图书进行馆藏空闲查询
 # 如果存在空闲图书，返回True，不存在返回False
@@ -27,16 +28,28 @@ def getFreeBook(branchLibrary,systemNumber):
     url = url.format(SecretKey=secretKey,SystemNumber=systemNumber)
     response = requests.get(url=url,headers=headers)
     response.encoding = 'utf-8'
+
     selector = etree.HTML(response.text)
 
-    xpath = '//tr//td[contains(following-sibling::td[1]//text(),"{branchLibrary}")]//text()'.format(branchLibrary=branchLibrary)
+    xpath = '//tr//td[contains(following-sibling::td[1],"{branchLibrary}") or contains(following-sibling::td[2],"{branchLibrary}")]'.format(
+        branchLibrary=branchLibrary)
 
-    result = ''.join(selector.xpath(xpath)).strip()
+    result = selector.xpath(xpath)
 
-    if result == '在架上':
-        return True
-    else:
-        return False
+    resultJson = {
+        'free':0,       # 在架上
+        'Lent':0,       # 已借出
+        'Cataloging':0  #编目中
+    }
+
+    for element in result:
+        if re.search('借出',element.text):
+            resultJson['Lent'] += 1
+        if re.search('架上',element.text):
+            resultJson['free'] += 1
+        if re.search('编目',element.text):
+            resultJson['Cataloging'] += 1
+    return resultJson
 
 if __name__ == "__main__":
-    print(getFreeBook('留仙洞','001275564'))
+    print(getFreeBook('西丽湖','001235552'))

@@ -3,6 +3,8 @@ from django.shortcuts import render
 import json
 import Spider.loginSpider
 import Spider.googleSpider
+import Spider.autoBarrowBookSpider
+import Spider.autoInformLibraryFreeBook
 import base64
 import DataBaseManagement.mysqlDatabaseComment
 from wordcloud import  *
@@ -58,7 +60,7 @@ def getWordCloud(request:HttpRequest):
 
         ISBN = getData.get('ISBN','0')
         # 获得该书的所有评论
-        comments = DataBaseManagement.mysqlDatabaseComment.DatabaseComment().query(ISBN)
+        comments = DataBaseManagement.mysqlDatabaseComment.DatabaseComment().queryComments(ISBN)
 
         # 生成词云
         wordCloud = WordCloud(font_path='simfang.ttf',background_color='white',margin=2).generate(comments)
@@ -70,11 +72,97 @@ def getWordCloud(request:HttpRequest):
         wordCloud.to_image().save(imageByteArr,format='JPEG')
         imageByteArr = imageByteArr.getvalue()
 
-        return HttpResponse(imageByteArr,content_type='image/jpeg')
+        response = HttpResponse(imageByteArr,content_type='image/jpeg')
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+        response["Access-Control-Max-Age"] = "1000"
+        response["Access-Control-Allow-Headers"] = "*"
+        return response
     errorResult = {'status':False,'errorMsg':'请求词云出错'}
-    return HttpResponse(json.dumps(errorResult),content_type='application/json')
+    response = HttpResponse(json.dumps(errorResult),content_type='application/json')
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "1000"
+    response["Access-Control-Allow-Headers"] = "*"
 
 
 # 用于自动续借的接口
 def autoBorrow(request:HttpRequest)->HttpResponse:
-    pass
+    if request.method == "GET":
+        getData = request.GET
+
+        userID = getData.get('userID','')
+
+        user = DataBaseManagement.mysqlDatabaseComment.DatabaseComment().queryUser(userID)
+
+        print('从数据库中得到的user为:',user)
+
+        Spider.autoBarrowBookSpider.wholeAutoBorrow(user=user['userName'],password=user['password'],receivers=(user['email'],))
+
+        successResult = {'status':True,'errorMsg':''}
+        return HttpResponse(json.dumps(successResult), content_type='application/json')
+    errorResult = {'status':False,'errorMsg':'请求自动续借错误'}
+    return HttpResponse(json.dumps(errorResult),content_type='application/json')
+
+# 用于查看馆藏空闲的接口，返回json
+# json格式如下:
+'''
+    {
+        book:[
+            {
+                position:'西丽湖校区',
+                remain:{
+                        'free':0,       # 在架上
+                        'Lent':0,       # 已借出
+                        'Cataloging':0  #编目中
+                }
+            },
+            {
+                position:'留仙洞校区',
+                remain:{
+                        'free':0,       # 在架上
+                        'Lent':0,       # 已借出
+                        'Cataloging':0  #编目中
+                }    
+            }
+        ]
+    }
+'''
+# 获得图书的馆藏信息，需要提供图书的系统号
+def getBookCollectionStatus(request:HttpRequest):
+    if request.method == "GET":
+        getData = request.GET
+
+        systemNumber = getData.get('systemNumber',None)
+
+        if systemNumber:
+            xiliData = Spider.autoInformLibraryFreeBook.getFreeBook('西丽湖',systemNumber)
+            liuxiandongData = Spider.autoInformLibraryFreeBook.getFreeBook('留仙洞',systemNumber)
+
+            resultData = {
+                'book':[
+                    {
+                        'position': '西丽湖校区',
+                        'remain':xiliData
+                    },
+                    {
+                        'position': '留仙洞校区',
+                        'remain': liuxiandongData
+                    }
+                ]
+            }
+
+            response = HttpResponse(json.dumps(resultData), content_type='application/json')
+            response["Access-Control-Allow-Origin"] = "*"
+            response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+            response["Access-Control-Max-Age"] = "1000"
+            response["Access-Control-Allow-Headers"] = "*"
+            return response
+
+    errorResult = {'status':False,'errorMsg':'请求馆藏信息时出现了错误'}
+    response = HttpResponse(json.dumps(errorResult),content_type='application/json')
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "1000"
+    response["Access-Control-Allow-Headers"] = "*"
+    return response

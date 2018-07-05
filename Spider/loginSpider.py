@@ -1,10 +1,18 @@
+import random
+
 import requests
 from lxml.html import etree
 
 
+def getRandomAlphet():
+    result = ''
+    for i in range(1,20):
+        result += (chr(random.randint(0,24)+65))
+    return result
 # 获取秘钥
 def getSecretKey():
-    keyUrl = 'http://opac.szpt.edu.cn:8991/F'
+    keyUrl = 'http://opac.szpt.edu.cn:8991/F/'+getRandomAlphet()
+    print('url:' + keyUrl)
     response = requests.get(url=keyUrl)
     response.encoding = 'utf-8'
     
@@ -39,6 +47,7 @@ data = {
 
 def login(user,password):
     url = 'http://opac.szpt.edu.cn:8991/F/{key}?func=file&file_name=login-session'.format(key=getSecretKey())
+
     response = requests.get(url,headers=headers)
     response.encoding = 'utf-8'
 
@@ -64,8 +73,11 @@ def login(user,password):
         return False,None
 
 if __name__ == "__main__":
+
+    # getRandomAlphet()
     print(login('16240011', '19970904')[1].text)
     # login('16240011', '19970904')
+
     # login('16240011', '19970904')
     # login('16240011', '19970904')
     # login('16240011', '19970904')
